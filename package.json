@@ -1,0 +1,12 @@
+{
+  "name": "mtg-advent-calendar-2023",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "prettier": "latest"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}
