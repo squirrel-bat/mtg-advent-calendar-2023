@@ -20,6 +20,8 @@
     var(--gold),
     var(--gold-dark) 60%
   );
+  --bg-gold-shine: radial-gradient(var(--gold-light), var(--gold));
+  --perspective: 700px;
 }
 
 @font-face {
@@ -72,10 +74,9 @@ h1 {
   justify-content: center;
 }
 
-.door {
-  font-size: 6rem;
-  outline: 2px dashed var(--gold-light-50);
-  outline-offset: -2px;
+.card {
+  perspective: var(--perspective);
+  position: relative;
   display: flex;
   flex-direction: column;
   aspect-ratio: 61/85;
@@ -83,13 +84,16 @@ h1 {
   align-items: center;
   min-width: var(--door-width);
   border-radius: var(--card-border-radius);
+  font-size: 6rem;
+  outline: 2px dashed var(--gold-light-50);
+  outline-offset: -2px;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   transition:
-    background-color,
+    scale,
     scale 500ms;
 }
-.door .day {
+.card .day {
   background: var(--bg-gold);
   -webkit-background-clip: text;
   background-clip: text;
@@ -97,26 +101,91 @@ h1 {
   color: transparent;
   font-weight: bold;
   filter: drop-shadow(var(--text-shadow-default));
+  pointer-events: none;
 }
-.door:hover {
+.card:hover {
   cursor: pointer;
-  background: radial-gradient(var(--gold-light), var(--gold-light-50));
   transition: scale 50ms;
   scale: 1.1;
+  outline: none;
 }
-.door:hover .day {
+.card:hover .door {
+  background: var(--bg-gold-shine);
+}
+.card:hover .day,
+.open .day {
   background: radial-gradient(var(--red), var(--red-dark));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-figure {
+.door {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 61/85;
+  justify-content: center;
+  align-items: center;
+}
+.door,
+figure,
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+  pointer-events: none;
+  border-radius: var(--card-border-radius);
 }
-.hide {
+figure {
   display: none;
+}
+.open figure {
+  display: revert;
+}
+
+@keyframes open {
+  0% {
+    rotate: y 0deg;
+  }
+  100% {
+    rotate: y -90deg;
+  }
+}
+.open .door {
+  background: var(--bg-gold-shine);
+  transform-origin: center left;
+  animation: open 1.5s forwards;
+}
+
+.highlight {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  scale: 0;
+  z-index: 1;
+}
+.highlight img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  height: auto;
+  width: auto;
+  max-height: 90vh;
+  max-width: 90vw;
+}
+@keyframes pop-in {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+.pop-in {
+  animation: pop-in 500ms forwards;
 }
