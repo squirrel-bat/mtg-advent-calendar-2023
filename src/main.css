@@ -1,7 +1,25 @@
 :root {
+  --red: rgb(171, 24, 13);
+  --red-dark: rgb(119, 0, 0);
+  --black-50: rgba(20, 20, 20, 0.5);
+  --text-shadow-default: 0.1rem 0.1rem 0 var(--black-50);
+
   --door-width: 150px;
   --gap: 2rem;
   --card-border-radius: 4.75% / 3.5%;
+  --white-25: rgba(255, 255, 255, 0.25);
+  --gold-light: rgb(255, 205, 113);
+  --gold-light-50: rgba(255, 205, 113, 0.5);
+  --gold: rgb(253, 169, 47);
+  --gold-dark: rgb(231, 153, 75);
+  --bg-gold: linear-gradient(
+    0.49turn,
+    var(--gold) 40%,
+    var(--gold-light) 48%,
+    var(--gold-light) 52%,
+    var(--gold),
+    var(--gold-dark) 60%
+  );
 }
 
 @font-face {
@@ -20,6 +38,8 @@ html {
   font-size: 1rem;
   min-height: 100%;
   text-align: center;
+  background: radial-gradient(var(--red), var(--red-dark));
+  color: var(--gold-light);
 }
 
 body {
@@ -33,6 +53,14 @@ body {
 h1 {
   font-size: 5rem;
   text-transform: uppercase;
+  background: var(--bg-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
+  user-select: none;
+  filter: drop-shadow(var(--text-shadow-default));
 }
 
 .calendar {
@@ -45,13 +73,50 @@ h1 {
 }
 
 .door {
-  font-size: 4rem;
-  outline: 0.15rem dashed lightgrey;
+  font-size: 6rem;
+  outline: 2px dashed var(--gold-light-50);
+  outline-offset: -2px;
   display: flex;
+  flex-direction: column;
   aspect-ratio: 61/85;
   justify-content: center;
   align-items: center;
   min-width: var(--door-width);
   border-radius: var(--card-border-radius);
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color,
+    scale 500ms;
+}
+.door .day {
+  background: var(--bg-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: bold;
+  filter: drop-shadow(var(--text-shadow-default));
+}
+.door:hover {
+  cursor: pointer;
+  background: radial-gradient(var(--gold-light), var(--gold-light-50));
+  transition: scale 50ms;
+  scale: 1.1;
+}
+.door:hover .day {
+  background: radial-gradient(var(--red), var(--red-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.hide {
+  display: none;
 }
