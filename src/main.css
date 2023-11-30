@@ -146,6 +146,10 @@ figure {
 .open figure {
   display: revert;
 }
+.open img {
+  pointer-events: all;
+  cursor: zoom-in;
+}
 
 @keyframes open {
   0% {
@@ -167,6 +171,7 @@ figure {
   width: 100%;
   scale: 0;
   z-index: 1;
+  cursor: zoom-out;
 }
 .highlight img {
   position: absolute;
@@ -175,8 +180,8 @@ figure {
   translate: -50% -50%;
   height: auto;
   width: auto;
-  max-height: 90vh;
-  max-width: 90vw;
+  max-height: 95vh;
+  max-width: 95vw;
 }
 @keyframes pop-in {
   0% {
@@ -186,6 +191,18 @@ figure {
     scale: 1;
   }
 }
+@keyframes pop-out {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
+}
 .pop-in {
-  animation: pop-in 500ms forwards;
+  animation: pop-in 350ms forwards;
+}
+.pop-out {
+  transform-origin: center !important;
+  animation: pop-out 350ms forwards;
 }

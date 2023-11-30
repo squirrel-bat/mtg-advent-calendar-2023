@@ -1,3 +1,14 @@
+function getCenterOfElement(el) {
+  return (
+    el.getBoundingClientRect().left +
+    el.width / 2 +
+    'px' +
+    ' ' +
+    (el.getBoundingClientRect().top + el.height / 2) +
+    'px'
+  )
+}
+
 function handleDoorClick(e) {
   let img = e.target.querySelector('img')
   if (img.attributes['src'].value === '' || e.target.classList.contains('open'))
@@ -10,21 +21,17 @@ function handleDoorClick(e) {
       let hightlight = document.createElement('div')
       hightlight.id = 'highlight-' + id
       hightlight.classList.add('highlight')
-      hightlight.style.setProperty(
-        'transform-origin',
-        img.getBoundingClientRect().left +
-          img.width / 2 +
-          'px' +
-          ' ' +
-          (img.getBoundingClientRect().top + img.height / 2) +
-          'px',
-      )
+      hightlight.style.setProperty('transform-origin', getCenterOfElement(img))
       hightlight.appendChild(img.cloneNode())
-      hightlight.addEventListener('click', () => {
-        hightlight.remove()
-      })
       document.querySelector('body').appendChild(hightlight)
       hightlight.classList.add('pop-in')
+      hightlight.addEventListener('click', () => {
+        hightlight.classList.remove('pop-in')
+        hightlight.classList.add('pop-out')
+        hightlight.addEventListener('animationend', () => {
+          hightlight.remove()
+        })
+      })
     })
   }, 1000)
 }
