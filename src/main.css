@@ -5,6 +5,9 @@
   --text-shadow-default: 0.1rem 0.1rem 0 var(--black-50);
 
   --door-width: 150px;
+  @media screen and (max-device-width: 640px) {
+    --door-width: 260px;
+  }
   --gap: 2rem;
   --card-border-radius: 4.75% / 3.5%;
   --white: rgb(245, 245, 245);
