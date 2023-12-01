@@ -23,7 +23,7 @@ function handleDoorClick(e) {
       dialog.show()
       let dialogWrapper = document.createElement('div')
       dialogWrapper.id = 'dialog-wrapper'
-      dialogWrapper.addEventListener('click', () => {
+      dialog.querySelector('button').addEventListener('click', () => {
         document.querySelector('#dialog-wrapper').remove()
       })
       dialogWrapper.appendChild(dialog)
@@ -53,7 +53,7 @@ function handleDoorClick(e) {
         })
       })
     })
-  }, 1000)
+  }, 900)
 }
 
 function makeItSnow(amount = 100) {
