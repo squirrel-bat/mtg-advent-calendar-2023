@@ -53,3 +53,16 @@
   left: calc(50% - min(30vw, 400px));
   animation: -78s moving 10s infinite linear reverse;
 }
+
+@keyframes hovering {
+  0%,
+  100% {
+    translate: 0 -3%;
+  }
+  50% {
+    translate: 0 3%;
+  }
+}
+#highlight-day-1 img {
+  animation: hovering 10s infinite ease-in-out;
+}
