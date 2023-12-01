@@ -22,7 +22,10 @@ function handleDoorClick(e) {
       hightlight.id = 'highlight-' + id
       hightlight.classList.add('highlight')
       hightlight.style.setProperty('transform-origin', getCenterOfElement(img))
-      hightlight.appendChild(img.cloneNode())
+      let imgWrapper = document.createElement('div')
+      imgWrapper.classList.add('img-wrapper')
+      imgWrapper.appendChild(img.cloneNode())
+      hightlight.appendChild(imgWrapper)
       document.querySelector('body').appendChild(hightlight)
       hightlight.classList.add('pop-in')
       hightlight.addEventListener('click', () => {
@@ -36,8 +39,40 @@ function handleDoorClick(e) {
   }, 1000)
 }
 
+function makeItSnow(amount = 100) {
+  let protoFlake = document.createElement('div')
+  protoFlake.classList.add('snowflake')
+  protoFlake.textContent = '❅'
+  let flakes = []
+  for (let i = 0; i < amount; i++) {
+    let flake = protoFlake.cloneNode(true)
+    flake.style.setProperty(
+      '--start-x',
+      Math.floor(Math.random() * 100).toString() + '%',
+    )
+    flake.style.setProperty('--speed', Math.random().toString())
+    flake.style.setProperty(
+      '--drift',
+      (Math.random() * (Math.random() > 0.5 ? 1 : -1)).toString(),
+    )
+    flake.style.setProperty('--opacity', (0.5 + Math.random() / 2).toString())
+    flake.style.setProperty('--rotation', Math.random().toString())
+    flake.style.setProperty('--scale-mod', (Math.random() / 2).toString())
+
+    flakes.push(flake)
+  }
+  let snow = document.createElement('div')
+  snow.id = 'snow'
+  snow.append(...flakes)
+  document.querySelector('body').appendChild(snow)
+}
+
 window.addEventListener('load', () => {
   document.querySelectorAll('.card').forEach((element) => {
     element.addEventListener('click', handleDoorClick)
+  })
+  makeItSnow()
+  document.querySelector('#toggle-snow').addEventListener('mousedown', () => {
+    document.getElementById('snow').classList.toggle('hide')
   })
 })

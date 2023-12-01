@@ -1,26 +1,40 @@
 :root {
-  --red: rgb(171, 24, 13);
-  --red-dark: rgb(119, 0, 0);
+  --red: rgb(175, 28, 18);
+  --red-dark: rgb(117, 3, 3);
   --black-50: rgba(20, 20, 20, 0.5);
   --text-shadow-default: 0.1rem 0.1rem 0 var(--black-50);
 
   --door-width: 150px;
   --gap: 2rem;
   --card-border-radius: 4.75% / 3.5%;
+  --white: rgb(245, 245, 245);
   --white-25: rgba(255, 255, 255, 0.25);
   --gold-light: rgb(255, 205, 113);
   --gold-light-50: rgba(255, 205, 113, 0.5);
   --gold: rgb(253, 169, 47);
-  --gold-dark: rgb(231, 153, 75);
+  --gold-red: rgb(208, 123, 27);
+  --blue-light: rgb(171, 233, 255);
+  --blue: rgb(53, 192, 215);
+  --blue-dark: rgb(0, 116, 178);
+
+  --bg-blue: radial-gradient(
+    var(--blue-dark),
+    var(--blue) 70%,
+    var(--blue-light)
+  );
   --bg-gold: linear-gradient(
     0.49turn,
     var(--gold) 40%,
     var(--gold-light) 48%,
     var(--gold-light) 52%,
     var(--gold),
-    var(--gold-dark) 60%
+    var(--gold-red) 60%
   );
-  --bg-gold-shine: radial-gradient(var(--gold-light), var(--gold));
+  --bg-gold-shine: radial-gradient(
+    var(--white),
+    var(--gold-light) 50%,
+    var(--gold) 80%
+  );
   --perspective: 700px;
 }
 
@@ -43,7 +57,6 @@ html {
   background: radial-gradient(var(--red), var(--red-dark));
   color: var(--gold-light);
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -51,18 +64,95 @@ body {
   flex-direction: column;
   place-items: center;
 }
-
+button {
+  font: inherit;
+  font-weight: bold;
+  font-size: 2.5rem;
+  min-width: 1em;
+  padding: 0.08em 0.4em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none !important;
+  transition: all 100ms ease-out;
+  transform-origin: bottom center;
+  background: var(--bg-blue);
+  color: var(--white);
+  border: none;
+  outline: 0.05em solid var(--white-25);
+  outline-offset: -0.05em;
+  border-radius: 0.16em;
+  box-shadow:
+    0 0.13em 0.06em var(--blue),
+    0 0.13em 0 var(--blue-dark);
+  text-shadow: var(--text-shadow-default);
+  margin-bottom: 0.13em;
+}
+button:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 11%;
+  width: 4%;
+  aspect-ratio: 1/2.5;
+  background: linear-gradient(var(--white) 80%, var(--blue-light));
+  box-shadow:
+    0 0.05em 0.05em var(--blue-light),
+    0 0.1em 0 var(--blue);
+  border-bottom-left-radius: 80%;
+  border-bottom-right-radius: 20%;
+}
+button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 15%;
+  width: 4%;
+  aspect-ratio: 1/6;
+  background: linear-gradient(var(--white) 80%, var(--blue-light));
+  box-shadow:
+    0 0.05em 0.05em var(--blue-light),
+    0 0.1em 0 var(--blue);
+  border-bottom-left-radius: 70%;
+  border-bottom-right-radius: 30%;
+}
+button:hover {
+  translate: 0 0.07em;
+  box-shadow:
+    0 0.06em 0.06em var(--blue),
+    0 0.06em 0 var(--blue-dark);
+}
+button:active {
+  box-shadow: none;
+  translate: 0 0.16em;
+  filter: brightness(1.1);
+}
+#title-wrapper {
+  position: relative;
+  width: 100%;
+}
+#toggle-snow {
+  position: absolute;
+  top: calc(50% - 0.8em);
+  right: 1em;
+}
+#title {
+  background: radial-gradient(
+    circle at center,
+    var(--gold-red),
+    var(--gold-light) 50%,
+    var(--gold) 80%
+  );
+  box-shadow: 0 0.4rem 0 0 var(--gold-red);
+  filter: saturate(1.1);
+}
 h1 {
   font-size: 5rem;
+  font-weight: bold;
   text-transform: uppercase;
-  background: var(--bg-gold);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  text-shadow: none;
-  user-select: none;
-  filter: drop-shadow(var(--text-shadow-default));
+  color: var(--red);
+  text-shadow: var(--text-shadow-default);
 }
 
 .calendar {
@@ -169,19 +259,24 @@ figure {
   position: fixed;
   height: 100%;
   width: 100%;
-  scale: 0;
+  scale: 0.01;
   z-index: 1;
   cursor: zoom-out;
+  transform-style: preserve-3d;
 }
-.highlight img {
+
+.highlight .img-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
+}
+.highlight img {
+  position: static;
   height: auto;
   width: auto;
-  max-height: 95vh;
-  max-width: 95vw;
+  max-height: 80vh;
+  max-width: 80vw;
 }
 @keyframes pop-in {
   0% {
@@ -203,6 +298,65 @@ figure {
   animation: pop-in 350ms forwards;
 }
 .pop-out {
-  transform-origin: center !important;
+  /*transform-origin: center !important;*/
   animation: pop-out 350ms forwards;
+}
+
+@keyframes snow {
+  0% {
+    transform: translate(0, 0) rotateZ(calc(var(--rotation) * 1turn))
+      scale(calc(1 - var(--scale-mod)));
+  }
+  100% {
+    transform: translate(calc(20vw * var(--drift)), 110vh)
+      rotateZ(calc(var(--rotation) * 1turn)) scale(calc(1 - var(--scale-mod)));
+  }
+}
+#snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.snowflake {
+  position: absolute;
+  --start-x: 50%;
+  --speed: 1;
+  --drift: 0;
+  --rotation: 0;
+  --opacity: 1;
+  --scale-mod: 0;
+  opacity: var(--opacity);
+  top: -2vh;
+  translate: -50% -50%;
+  left: var(--start-x);
+  color: var(--white);
+  font-size: 2rem;
+  animation: calc(6s + (4s * var(--speed))) linear calc(10s * var(--speed)) snow
+    infinite;
+}
+.hide {
+  display: none;
+}
+a {
+  text-decoration: none;
+  color: var(--gold-light);
+}
+a:hover {
+  text-decoration: underline;
+}
+#copyright {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: var(--text-shadow-default);
+  color: var(--white);
+}
+#fan-content-policy {
+  font-family: system-ui;
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 1rem;
+  color: var(--black-50);
 }
