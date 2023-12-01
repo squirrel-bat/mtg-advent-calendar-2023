@@ -36,6 +36,12 @@
     var(--gold) 80%
   );
   --perspective: 700px;
+  --bg-gold-bar: radial-gradient(
+    circle at center,
+    var(--gold-red),
+    var(--gold-light) 50%,
+    var(--gold) 80%
+  );
 }
 
 @font-face {
@@ -87,7 +93,7 @@ button {
   text-shadow: var(--text-shadow-default);
   margin-bottom: 0.13em;
 }
-button:before {
+.frosted:before {
   content: '';
   display: block;
   position: absolute;
@@ -102,7 +108,7 @@ button:before {
   border-bottom-left-radius: 80%;
   border-bottom-right-radius: 20%;
 }
-button:after {
+.frosted:after {
   content: '';
   display: block;
   position: absolute;
@@ -136,14 +142,10 @@ button:active {
   position: absolute;
   top: calc(50% - 0.8em);
   right: 1em;
+  font-weight: normal;
 }
 #title {
-  background: radial-gradient(
-    circle at center,
-    var(--gold-red),
-    var(--gold-light) 50%,
-    var(--gold) 80%
-  );
+  background: var(--bg-gold-bar);
   box-shadow: 0 0.4rem 0 0 var(--gold-red);
   filter: saturate(1.1);
 }
@@ -298,7 +300,6 @@ figure {
   animation: pop-in 350ms forwards;
 }
 .pop-out {
-  /*transform-origin: center !important;*/
   animation: pop-out 350ms forwards;
 }
 
@@ -359,4 +360,49 @@ a:hover {
   margin: 0;
   padding: 1rem;
   color: var(--black-50);
+}
+#dialog-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black-50);
+}
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  margin: 0;
+  padding: 0.5em 1em;
+  background: var(--bg-blue);
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--white);
+  text-shadow: var(--text-shadow-default);
+  border-radius: 0.16em;
+  border: none;
+  outline: 0.05em solid var(--white-25);
+  outline-offset: -0.05em;
+  box-shadow:
+    0 0.26em 0.13em var(--blue),
+    0 0.26em 0 var(--blue-dark);
+}
+dialog p {
+  margin: 0 0 0.25em;
+}
+.date {
+  background: var(--bg-gold-bar);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
+  font-size: 1.5em;
+  filter: drop-shadow(0.1rem 0.1rem 0 var(--gold-red))
+    drop-shadow(0 0 0.2em var(--gold-light-50));
+}
+dialog button {
+  position: relative;
 }

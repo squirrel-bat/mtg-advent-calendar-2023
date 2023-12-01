@@ -10,10 +10,27 @@ function getCenterOfElement(el) {
 }
 
 function handleDoorClick(e) {
+  if (e.target.classList.contains('open')) return
   let img = e.target.querySelector('img')
-  if (img.attributes['src'].value === '' || e.target.classList.contains('open'))
-    return
   let id = e.target.id
+  if (img.attributes['src'].value === '') {
+    if (document.querySelector('dialog') === null) {
+      let dialog = document.createElement('dialog')
+      dialog.innerHTML = `<p>Wait, it's not day <span class="date">${
+        id.split('-')[1]
+      }</span> yet!</p><button>Okay...</button>`
+      dialog.classList.add('frosted', 'pop-in')
+      dialog.show()
+      let dialogWrapper = document.createElement('div')
+      dialogWrapper.id = 'dialog-wrapper'
+      dialogWrapper.addEventListener('click', () => {
+        document.querySelector('#dialog-wrapper').remove()
+      })
+      dialogWrapper.appendChild(dialog)
+      document.querySelector('body').appendChild(dialogWrapper)
+    }
+    return
+  }
   e.target.classList.add('open')
   e.target.removeEventListener('click', handleDoorClick)
   setTimeout(() => {
