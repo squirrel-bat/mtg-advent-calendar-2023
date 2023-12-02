@@ -1,0 +1,116 @@
+#highlight-day-2 {
+  background: radial-gradient(
+    rgb(255, 196, 137),
+    rgb(170, 110, 74),
+    rgb(62, 34, 31)
+  );
+}
+@keyframes rotateZ {
+  0% {
+    rotate: z 0turn;
+  }
+  100% {
+    rotate: z 1turn;
+  }
+}
+#highlight-day-2:before {
+  content: '';
+  background: radial-gradient(
+    closest-side,
+    transparent,
+    rgb(170, 110, 74),
+    transparent 90%
+  );
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  height: 200%;
+  width: 200%;
+  transform-origin: 40% 50%;
+  translate: 10% 0;
+  opacity: 0.5;
+  animation: rotateZ 6s infinite linear;
+}
+
+@keyframes split {
+  10% {
+    rotate: -1deg;
+  }
+  11% {
+    rotate: 1deg;
+  }
+  12% {
+    rotate: -2deg;
+  }
+  13% {
+    rotate: 2deg;
+  }
+  14% {
+    rotate: -3deg;
+  }
+  15% {
+    rotate: 3deg;
+  }
+  16% {
+    rotate: -4deg;
+  }
+  17% {
+    scale: 1.05;
+    rotate: 4deg;
+  }
+  18% {
+    rotate: -5deg;
+  }
+  19% {
+    rotate: 5deg;
+  }
+  20% {
+    scale: 1.1;
+  }
+  0%,
+  10%,
+  26%,
+  100% {
+    scale: 1;
+    opacity: var(--opacity);
+  }
+  0%,
+  10%,
+  20%,
+  100% {
+    rotate: 0deg;
+    translate: 0 0;
+  }
+  26%,
+  50% {
+    translate: var(--x) var(--y);
+    opacity: 1;
+    scale: 0.5;
+  }
+  90% {
+    translate: 0 0;
+    scale: 0.5;
+  }
+}
+#highlight-day-2 .img-wrapper:before {
+  content: '';
+  background: url('https://cards.scryfall.io/large/front/5/8/580fbbf8-ba7e-4889-a5ea-d066f3ea8cea.jpg')
+    no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  --opacity: 0.5;
+  opacity: var(--opacity);
+  border-radius: var(--card-border-radius) !important;
+  --x: 30%;
+  --y: 5%;
+  animation: split 4.5s ease-out infinite;
+}
+#highlight-day-2 img {
+  --x: -30%;
+  --y: -5%;
+  animation: split 4.5s ease-out infinite;
+}

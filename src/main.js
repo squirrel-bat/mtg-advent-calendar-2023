@@ -9,6 +9,28 @@ function getCenterOfElement(el) {
   )
 }
 
+function addHighlightHandler(el, id, img) {
+  el.addEventListener('click', () => {
+    let hightlight = document.createElement('div')
+    hightlight.id = 'highlight-' + id
+    hightlight.classList.add('highlight')
+    hightlight.style.setProperty('transform-origin', getCenterOfElement(img))
+    let imgWrapper = document.createElement('div')
+    imgWrapper.classList.add('img-wrapper')
+    imgWrapper.appendChild(img.cloneNode())
+    hightlight.appendChild(imgWrapper)
+    document.querySelector('body').appendChild(hightlight)
+    hightlight.classList.add('pop-in')
+    hightlight.addEventListener('click', () => {
+      hightlight.classList.remove('pop-in')
+      hightlight.classList.add('pop-out')
+      hightlight.addEventListener('animationend', () => {
+        hightlight.remove()
+      })
+    })
+  })
+}
+
 function handleDoorClick(e) {
   if (e.target.classList.contains('open')) return
   let img = e.target.querySelector('img')
@@ -34,25 +56,7 @@ function handleDoorClick(e) {
   e.target.classList.add('open')
   e.target.removeEventListener('click', handleDoorClick)
   setTimeout(() => {
-    e.target.addEventListener('click', () => {
-      let hightlight = document.createElement('div')
-      hightlight.id = 'highlight-' + id
-      hightlight.classList.add('highlight')
-      hightlight.style.setProperty('transform-origin', getCenterOfElement(img))
-      let imgWrapper = document.createElement('div')
-      imgWrapper.classList.add('img-wrapper')
-      imgWrapper.appendChild(img.cloneNode())
-      hightlight.appendChild(imgWrapper)
-      document.querySelector('body').appendChild(hightlight)
-      hightlight.classList.add('pop-in')
-      hightlight.addEventListener('click', () => {
-        hightlight.classList.remove('pop-in')
-        hightlight.classList.add('pop-out')
-        hightlight.addEventListener('animationend', () => {
-          hightlight.remove()
-        })
-      })
-    })
+    addHighlightHandler(e.target, id, img)
   }, 900)
 }
 
@@ -86,7 +90,11 @@ function makeItSnow(amount = 100) {
 
 window.addEventListener('load', () => {
   document.querySelectorAll('.card').forEach((element) => {
-    element.addEventListener('click', handleDoorClick)
+    if (element.classList.contains('open')) {
+      addHighlightHandler(element, element.id, element.querySelector('img'))
+    } else {
+      element.addEventListener('click', handleDoorClick)
+    }
   })
   makeItSnow()
   document.querySelector('#toggle-snow').addEventListener('mousedown', () => {
