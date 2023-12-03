@@ -238,6 +238,9 @@ figure {
 .open figure {
   display: revert;
 }
+img {
+  font-size: 2rem;
+}
 .open img {
   pointer-events: all;
   cursor: zoom-in;
