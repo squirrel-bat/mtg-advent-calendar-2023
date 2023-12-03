@@ -11,14 +11,24 @@ function getCenterOfElement(el) {
 
 function addHighlightHandler(el, id, img) {
   el.addEventListener('click', () => {
-    let hightlight = document.createElement('div')
+    const hightlight = document.createElement('div')
     hightlight.id = 'highlight-' + id
     hightlight.classList.add('highlight')
     hightlight.style.setProperty('transform-origin', getCenterOfElement(img))
-    let imgWrapper = document.createElement('div')
+
+    const imgWrapper = document.createElement('div')
     imgWrapper.classList.add('img-wrapper')
     imgWrapper.appendChild(img.cloneNode())
-    hightlight.appendChild(imgWrapper)
+
+    const createGhosts = function* (amount) {
+      for (let i = 0; i < amount; i++) {
+        const e = document.createElement('div')
+        e.classList.add('ghost-' + i)
+        yield e
+      }
+    }
+
+    hightlight.append(imgWrapper, ...createGhosts(3))
     document.querySelector('body').appendChild(hightlight)
     hightlight.classList.add('pop-in')
     hightlight.addEventListener('click', () => {
@@ -33,17 +43,17 @@ function addHighlightHandler(el, id, img) {
 
 function handleDoorClick(e) {
   if (e.target.classList.contains('open')) return
-  let img = e.target.querySelector('img')
-  let id = e.target.id
+  const img = e.target.querySelector('img')
+  const id = e.target.id
   if (img.attributes['src'].value === '') {
     if (document.querySelector('dialog') === null) {
-      let dialog = document.createElement('dialog')
+      const dialog = document.createElement('dialog')
       dialog.innerHTML = `<p>Wait, it's not day <span class="date">${
         id.split('-')[1]
       }</span> yet!</p><button>Okay...</button>`
       dialog.classList.add('frosted', 'pop-in')
       dialog.show()
-      let dialogWrapper = document.createElement('div')
+      const dialogWrapper = document.createElement('div')
       dialogWrapper.id = 'dialog-wrapper'
       dialog.querySelector('button').addEventListener('click', () => {
         document.querySelector('#dialog-wrapper').remove()
@@ -61,12 +71,13 @@ function handleDoorClick(e) {
 }
 
 function makeItSnow(amount = 100) {
-  let protoFlake = document.createElement('div')
+  const protoFlake = document.createElement('div')
   protoFlake.classList.add('snowflake')
   protoFlake.textContent = '❅'
-  let flakes = []
+  // TODO rewrite into Generator function (see ghosts)
+  const flakes = []
   for (let i = 0; i < amount; i++) {
-    let flake = protoFlake.cloneNode(true)
+    const flake = protoFlake.cloneNode(true)
     flake.style.setProperty(
       '--start-x',
       Math.floor(Math.random() * 100).toString() + '%',
@@ -82,7 +93,7 @@ function makeItSnow(amount = 100) {
 
     flakes.push(flake)
   }
-  let snow = document.createElement('div')
+  const snow = document.createElement('div')
   snow.id = 'snow'
   snow.append(...flakes)
   document.querySelector('body').appendChild(snow)
