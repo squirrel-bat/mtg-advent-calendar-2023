@@ -41,7 +41,7 @@
   width: auto;
   font-size: 8rem;
   top: 60%;
-  z-index: 2;
+  z-index: 3;
   scale: -1 1;
   animation:
     monkey calc(var(--animation-duration) * 3) infinite linear,
@@ -297,7 +297,6 @@
     radial-gradient(circle at 67% 70%, var(--white), transparent 40%),
     radial-gradient(circle at 10% 50%, var(--white), transparent 40%),
     radial-gradient(circle at 33% 10%, var(--white), transparent 45%);
-
   --mask: radial-gradient(closest-side, black, transparent);
   mask: var(--mask);
   -webkit-mask-image: var(--mask);
