@@ -28,7 +28,7 @@ function addHighlightHandler(el, id, img) {
       }
     }
 
-    hightlight.append(imgWrapper, ...createGhosts(3))
+    hightlight.append(imgWrapper, ...createGhosts(4))
     document.querySelector('body').appendChild(hightlight)
     hightlight.classList.add('pop-in')
     hightlight.addEventListener('click', () => {
