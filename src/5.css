@@ -56,7 +56,7 @@
 
 #highlight-day-5 .img-wrapper:before {
   content: '';
-  background: url('vine-left.svg') no-repeat;
+  background: url('./vine-left.svg') no-repeat;
   background-size: contain;
   position: absolute;
   --height: 87.054%;
@@ -72,7 +72,7 @@
 }
 #highlight-day-5 .img-wrapper:after {
   content: '';
-  background: url('vine-right.svg') no-repeat bottom right;
+  background: url('./vine-right.svg') no-repeat bottom right;
   background-size: contain;
   position: absolute;
   --height: 52.932%;
