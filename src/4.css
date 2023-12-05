@@ -12,6 +12,7 @@
 }
 
 #highlight-day-4 {
+  --animation-duration: 8s;
   background: linear-gradient(
     to bottom,
     rgb(179, 187, 222),
