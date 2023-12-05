@@ -1,8 +1,5 @@
-:root {
-  --animation-duration: 8s;
-}
-
 #highlight-day-3 {
+  --animation-duration: 8s;
   --scale: 10;
   --offset: calc((1 - 1 / var(--scale)) * 100%);
   --one-percent: calc(1% / var(--scale));

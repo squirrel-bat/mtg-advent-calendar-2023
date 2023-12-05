@@ -1,0 +1,466 @@
+#highlight-day-5:before,
+#highlight-day-5:after,
+#highlight-day-5 [class*='ghost-'],
+#highlight-day-5 [class*='ghost-']:before,
+#highlight-day-5 [class*='ghost-']:after,
+#highlight-day-5 [class*='part-'],
+#highlight-day-5 [class*='part-']:before,
+#highlight-day-5 [class*='part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: saturate(1.05);
+}
+
+#highlight-day-5 {
+  --leaf: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100"><path d="M 0.5935893,0.55753532 C 18.002161,2.6290655 39.864361,-3.4752769 52.050311,6.6617944 64.236258,16.798863 62.97011,21.957519 75.455421,35.12432 87.940734,48.291122 84.967829,74.48647 99.44984,99.503817 68.88203,93.459634 49.372103,89.064332 38.383917,77.453562 26.156803,64.533667 15.693035,63.864329 6.7388457,52.64779 -2.5840478,40.96939 2.7378875,20.929295 0.5935893,0.55753532 Z" /></svg>');
+  --width-vine: calc(100 * sqrt(2));
+  --left-shadow: drop-shadow(-0.2rem 0.4rem var(--black-50));
+  --right-shadow: drop-shadow(0.2rem 0.4rem var(--black-50));
+  --anim-vine-left-duration: 2s;
+  --anim-vine-right-duration: 3s;
+  --flower-white: rgb(252, 228, 194);
+  --flower-height-scale: 1 / 0.72;
+  color: var(--gold-light);
+
+  transform-style: flat;
+  perspective: var(--perspective);
+  background: radial-gradient(rgb(52, 76, 55) 10%, rgb(21, 35, 31));
+}
+
+#highlight-day-5:before {
+  text-align: center;
+  content: '❀';
+  font-size: 100vh;
+  line-height: 0.9em;
+  height: 1em;
+  width: 1em;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transform-origin: center;
+  animation: rotateZ 30s infinite linear;
+  opacity: 0.1;
+  scale: 2;
+}
+
+#highlight-day-5 .img-wrapper {
+  height: auto;
+  width: auto;
+  max-height: 80cqh;
+  max-width: 80cqw;
+}
+
+#highlight-day-5 .img-wrapper:before {
+  content: '';
+  background: url('vine-left.svg') no-repeat;
+  background-size: contain;
+  position: absolute;
+  --height: 87.054%;
+  height: var(--height);
+  width: 100%;
+  left: -2%;
+  top: unset;
+  bottom: -3%;
+  filter: var(--left-shadow);
+  transform-origin: 3% 95%;
+  scale: 0;
+  animation: pop-in var(--anim-vine-left-duration) forwards ease-out;
+}
+#highlight-day-5 .img-wrapper:after {
+  content: '';
+  background: url('vine-right.svg') no-repeat bottom right;
+  background-size: contain;
+  position: absolute;
+  --height: 52.932%;
+  height: var(--height);
+  width: 100%;
+  top: unset;
+  left: unset;
+  right: -2%;
+  bottom: -3%;
+  filter: var(--left-shadow);
+  transform-origin: 97% 91%;
+  scale: 0;
+  animation: pop-in var(--anim-vine-right-duration) forwards ease-out;
+}
+
+@keyframes bloom {
+  0% {
+    transform: rotate3d(1, -1, 0, 80deg);
+  }
+  100% {
+    transform: rotate3d(1, -1, 0, 0deg);
+  }
+  0% {
+    scale: 0;
+  }
+  10%,
+  100% {
+    scale: 1;
+  }
+}
+
+/*red*/
+#highlight-day-5 .ghost-2 {
+  max-height: min(20%, calc(20cqw * var(--flower-height-scale)));
+  width: auto;
+  aspect-ratio: 1/1;
+  translate: -50% -50%;
+  top: calc(
+    50% + min(100cqh, calc(100cqw * var(--flower-height-scale))) * -0.255
+  );
+  left: calc(50% + (min(28cqh, calc(28cqw * var(--flower-height-scale)))) * -1);
+
+  filter: var(--left-shadow);
+  animation: rotateZ 4s;
+}
+#highlight-day-5 .ghost-2:before,
+#highlight-day-5 .ghost-2 .part-a:before,
+#highlight-day-5 .ghost-2 .part-a:after,
+#highlight-day-5 .ghost-2 .part-b:before,
+#highlight-day-5 .ghost-2 .part-b:after {
+  mask: var(--leaf) center/contain no-repeat;
+  -webkit-mask: var(--leaf) center/contain no-repeat;
+  max-height: 50%;
+  width: auto;
+  aspect-ratio: 1/1;
+  transform-origin: 2% 2%;
+  translate: 100% 100%;
+  background: linear-gradient(
+      to top right,
+      rgb(87, 28, 19),
+      transparent 45%,
+      transparent 55%,
+      rgb(87, 28, 19)
+    ),
+    rgb(203, 61, 40);
+  transform: rotate3d(1, -1, 0, 80deg);
+  scale: 0;
+  animation: bloom 3s var(--anim-vine-left-duration) forwards;
+}
+#highlight-day-5 .ghost-2 .part-a:before {
+  rotate: z 0.2turn;
+}
+#highlight-day-5 .ghost-2 .part-a:after {
+  rotate: z 0.41turn;
+}
+#highlight-day-5 .ghost-2 .part-b:before {
+  rotate: z 0.61turn;
+}
+#highlight-day-5 .ghost-2 .part-b:after {
+  rotate: z 0.8turn;
+}
+#highlight-day-5 .ghost-2:after {
+  background: radial-gradient(orange, transparent 20%);
+  scale: 0;
+  animation: pop-in 2s var(--anim-vine-left-duration) forwards;
+}
+
+/*white*/
+#highlight-day-5 .ghost-3 {
+  max-height: min(15%, calc(15cqw * var(--flower-height-scale)));
+  width: auto;
+  aspect-ratio: 1/1;
+  translate: -50% -50%;
+  top: calc(
+    50% + min(100cqh, calc(100cqw * var(--flower-height-scale))) * 0.015
+  );
+  left: calc(50% + min(28cqh, calc(28cqw * var(--flower-height-scale))));
+  --rotate-Z-offset: 0.3turn;
+  filter: var(--right-shadow);
+  --bloom-delay: calc(var(--anim-vine-right-duration) * 0.9);
+  animation: rotateZ 5s;
+}
+
+#highlight-day-5 .ghost-3:before,
+#highlight-day-5 .ghost-3 .part-a:before,
+#highlight-day-5 .ghost-3 .part-a:after,
+#highlight-day-5 .ghost-3 .part-b:before,
+#highlight-day-5 .ghost-3 .part-b:after {
+  mask: var(--leaf) center/contain no-repeat;
+  -webkit-mask: var(--leaf) center/contain no-repeat;
+  max-height: 50%;
+  width: auto;
+  aspect-ratio: 1/1;
+  transform-origin: 2% 2%;
+  translate: 100% 100%;
+  background: linear-gradient(
+      to top right,
+      rgb(171, 159, 109),
+      transparent 45%,
+      transparent 55%,
+      rgb(171, 159, 109)
+    ),
+    var(--flower-white);
+  rotate: z calc(0turn + var(--rotate-Z-offset));
+  transform: rotate3d(1, -1, 0, 80deg);
+  scale: 0;
+  animation: bloom 3s var(--bloom-delay) forwards;
+}
+#highlight-day-5 .ghost-3 .part-a:before {
+  rotate: z calc(0.19turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-3 .part-a:after {
+  rotate: z calc(0.39turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-3 .part-b:before {
+  rotate: z calc(0.59turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-3 .part-b:after {
+  rotate: z calc(0.78turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-3:after {
+  background: radial-gradient(orange, transparent 20%);
+  scale: 0;
+  animation: pop-in 2s var(--anim-vine-right-duration) forwards;
+}
+
+/*left white 2*/
+#highlight-day-5 .ghost-4 {
+  max-height: min(12%, calc(12cqw * var(--flower-height-scale)));
+  width: auto;
+  aspect-ratio: 1/1;
+  translate: -50% -50%;
+  top: calc(50% + min(100cqh, calc(100cqw * var(--flower-height-scale))) * 0.1);
+  left: calc(
+    50% + (min(25.5cqh, calc(25.5cqw * var(--flower-height-scale)))) * -1
+  );
+  --rotate-Z-offset: 0turn;
+  filter: var(--left-shadow);
+  animation: rotateZ 3s;
+  --bloom-delay: calc(var(--anim-vine-left-duration) * 0.7);
+}
+
+#highlight-day-5 .ghost-4:before,
+#highlight-day-5 .ghost-4 .part-a:before,
+#highlight-day-5 .ghost-4 .part-a:after,
+#highlight-day-5 .ghost-4 .part-b:before,
+#highlight-day-5 .ghost-4 .part-b:after {
+  mask: var(--leaf) center/contain no-repeat;
+  -webkit-mask: var(--leaf) center/contain no-repeat;
+  max-height: 50%;
+  width: auto;
+  aspect-ratio: 1/1;
+  transform-origin: 2% 2%;
+  translate: 100% 100%;
+  background: linear-gradient(
+      to top right,
+      rgb(171, 159, 109),
+      transparent 45%,
+      transparent 55%,
+      rgb(171, 159, 109)
+    ),
+    var(--flower-white);
+  rotate: z calc(0turn + var(--rotate-Z-offset));
+  transform: rotate3d(1, -1, 0, 80deg);
+  scale: 0;
+  animation: bloom 3s var(--bloom-delay) forwards;
+}
+#highlight-day-5 .ghost-4 .part-a:before {
+  rotate: z calc(0.19turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-4 .part-a:after {
+  rotate: z calc(0.39turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-4 .part-b:before {
+  rotate: z calc(0.59turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-4 .part-b:after {
+  rotate: z calc(0.78turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-4:after {
+  background: radial-gradient(orange, transparent 20%);
+  scale: 0;
+  animation: pop-in 2s var(--bloom-delay) forwards;
+}
+
+/*left white 3*/
+#highlight-day-5 .ghost-5 {
+  max-height: min(8%, calc(8cqw * var(--flower-height-scale)));
+  width: auto;
+  aspect-ratio: 1/1;
+  translate: -50% -50%;
+  top: calc(
+    50% + min(100cqh, calc(100cqw * var(--flower-height-scale))) * 0.32
+  );
+  left: calc(
+    50% + (min(27.5cqh, calc(27.5cqw * var(--flower-height-scale)))) * -1
+  );
+  --rotate-Z-offset: 0.7turn;
+  filter: var(--left-shadow);
+  --bloom-delay: calc(var(--anim-vine-left-duration) * 0.3);
+  animation:
+    rotateZ 2s reverse ease-in,
+    move-with 2s var(--bloom-delay) forwards;
+}
+@keyframes move-with {
+  0% {
+    translate: -50% -50%;
+  }
+  100% {
+    translate: -50% -100%;
+  }
+}
+
+#highlight-day-5 .ghost-5:before,
+#highlight-day-5 .ghost-5 .part-a:before,
+#highlight-day-5 .ghost-5 .part-a:after,
+#highlight-day-5 .ghost-5 .part-b:before,
+#highlight-day-5 .ghost-5 .part-b:after {
+  mask: var(--leaf) center/contain no-repeat;
+  -webkit-mask: var(--leaf) center/contain no-repeat;
+  max-height: 50%;
+  width: auto;
+  aspect-ratio: 1/1;
+  transform-origin: 2% 2%;
+  translate: 100% 100%;
+  background: linear-gradient(
+      to top right,
+      rgb(171, 159, 109),
+      transparent 45%,
+      transparent 55%,
+      rgb(171, 159, 109)
+    ),
+    var(--flower-white);
+  rotate: z calc(0turn + var(--rotate-Z-offset));
+  transform: rotate3d(1, -1, 0, 80deg);
+  scale: 0;
+  animation: bloom 3s var(--bloom-delay) forwards;
+}
+#highlight-day-5 .ghost-5 .part-a:before {
+  rotate: z calc(0.19turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-5 .part-a:after {
+  rotate: z calc(0.39turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-5 .part-b:before {
+  rotate: z calc(0.59turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-5 .part-b:after {
+  rotate: z calc(0.78turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-5:after {
+  background: radial-gradient(orange, transparent 20%);
+  scale: 0;
+  animation: pop-in 2s var(--bloom-delay) forwards;
+}
+
+/*red 2*/
+#highlight-day-5 .ghost-0 {
+  max-height: min(12%, calc(12cqw * var(--flower-height-scale)));
+  width: auto;
+  aspect-ratio: 1/1;
+  translate: -50% -50%;
+  top: calc(
+    50% + min(100cqh, calc(100cqw * var(--flower-height-scale))) * 0.36
+  );
+  left: calc(50% + min(28cqh, calc(28cqw * var(--flower-height-scale))));
+  filter: var(--right-shadow);
+  --rotate-Z-offset: 0.1turn;
+  --bloom-delay: calc(var(--anim-vine-right-duration) * 0.2);
+  animation: rotateZ 2s calc(var(--bloom-delay) * -1) reverse ease-in;
+}
+#highlight-day-5 .ghost-0:before,
+#highlight-day-5 .ghost-0 .part-a:before,
+#highlight-day-5 .ghost-0 .part-a:after,
+#highlight-day-5 .ghost-0 .part-b:before,
+#highlight-day-5 .ghost-0 .part-b:after {
+  mask: var(--leaf) center/contain no-repeat;
+  -webkit-mask: var(--leaf) center/contain no-repeat;
+  max-height: 50%;
+  width: auto;
+  aspect-ratio: 1/1;
+  transform-origin: 2% 2%;
+  translate: 100% 100%;
+  background: linear-gradient(
+      to top right,
+      rgb(87, 28, 19),
+      transparent 45%,
+      transparent 55%,
+      rgb(87, 28, 19)
+    ),
+    rgb(203, 61, 40);
+  rotate: z calc(0turn + var(--rotate-Z-offset));
+  transform: rotate3d(1, -1, 0, 80deg);
+  scale: 0;
+  animation: bloom 3s var(--bloom-delay) forwards;
+}
+#highlight-day-5 .ghost-0 .part-a:before {
+  rotate: z calc(0.2turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-0 .part-a:after {
+  rotate: z calc(0.41turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-0 .part-b:before {
+  rotate: z calc(0.61turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-0 .part-b:after {
+  rotate: z calc(0.8turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-0:after {
+  background: radial-gradient(orange, transparent 20%);
+  scale: 0;
+  animation: pop-in 2s var(--bloom-delay) forwards;
+}
+
+/*white last*/
+#highlight-day-5 .ghost-1 {
+  max-height: min(8%, calc(8cqw * var(--flower-height-scale)));
+  width: auto;
+  aspect-ratio: 1/1;
+  translate: -50% -50%;
+  top: calc(
+    50% + min(100cqh, calc(100cqw * var(--flower-height-scale))) * 0.335
+  );
+  left: calc(50% + (min(7cqh, calc(7cqw * var(--flower-height-scale)))) * -1);
+  --rotate-Z-offset: 0.35turn;
+  filter: drop-shadow(-0.2rem 0.3rem var(--black-50));
+  --bloom-delay: calc(var(--anim-vine-left-duration) * 0.8);
+  animation: rotateZ 3s;
+}
+#highlight-day-5 .ghost-1:before,
+#highlight-day-5 .ghost-1 .part-a:before,
+#highlight-day-5 .ghost-1 .part-a:after,
+#highlight-day-5 .ghost-1 .part-b:before,
+#highlight-day-5 .ghost-1 .part-b:after {
+  mask: var(--leaf) center/contain no-repeat;
+  -webkit-mask: var(--leaf) center/contain no-repeat;
+  max-height: 50%;
+  width: auto;
+  aspect-ratio: 1/1;
+  transform-origin: 2% 2%;
+  translate: 100% 100%;
+  background: linear-gradient(
+      to top right,
+      rgb(171, 159, 109),
+      transparent 45%,
+      transparent 55%,
+      rgb(171, 159, 109)
+    ),
+    var(--flower-white);
+  rotate: z calc(0turn + var(--rotate-Z-offset));
+  transform: rotate3d(1, -1, 0, 80deg);
+  scale: 0;
+  animation: bloom 3s var(--bloom-delay) forwards;
+}
+#highlight-day-5 .ghost-1 .part-a:before {
+  rotate: z calc(0.19turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-1 .part-a:after {
+  rotate: z calc(0.39turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-1 .part-b:before {
+  rotate: z calc(0.59turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-1 .part-b:after {
+  rotate: z calc(0.78turn + var(--rotate-Z-offset));
+}
+#highlight-day-5 .ghost-1:after {
+  background: radial-gradient(orange, transparent 20%);
+  scale: 0;
+  animation: pop-in 2s var(--bloom-delay) forwards;
+}

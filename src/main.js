@@ -22,13 +22,18 @@ function addHighlightHandler(el, id, img) {
 
     const createGhosts = function* (amount) {
       for (let i = 0; i < amount; i++) {
+        const partA = document.createElement('div')
+        const partB = document.createElement('div')
+        partA.classList.add('part-a')
+        partB.classList.add('part-b')
         const e = document.createElement('div')
         e.classList.add('ghost-' + i)
+        e.append(partA, partB)
         yield e
       }
     }
 
-    hightlight.append(imgWrapper, ...createGhosts(4))
+    hightlight.append(imgWrapper, ...createGhosts(6))
     document.querySelector('body').appendChild(hightlight)
     hightlight.classList.add('pop-in')
     hightlight.addEventListener('click', () => {
