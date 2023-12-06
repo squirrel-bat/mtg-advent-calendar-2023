@@ -1,0 +1,196 @@
+#highlight-day-6:before,
+#highlight-day-6:after,
+#highlight-day-6 [class*='ghost-'],
+#highlight-day-6 [class*='ghost-']:before,
+#highlight-day-6 [class*='ghost-']:after,
+#highlight-day-6 [class*='part-'],
+#highlight-day-6 [class*='part-']:before,
+#highlight-day-6 [class*='part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#highlight-day-6 {
+  perspective: var(--perspective);
+}
+#highlight-day-6:before {
+  top: 50%;
+  left: 50%;
+  height: 300%;
+  width: 300%;
+  background: radial-gradient(hsl(251, 67%, 34%), hsl(244, 29%, 10%));
+  translate: -50% -50% calc(var(--perspective) * -1);
+}
+#highlight-day-6:after {
+  height: min(110%, 110cqw);
+  width: auto;
+  aspect-ratio: 1/1;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    transparent 91%,
+    hsla(237, 62%, 54%, 0.75) 92%,
+    hsla(189, 100%, 79%, 0.5) 92.5%,
+    hsla(237, 62%, 54%, 0.5) 93%,
+    transparent,
+    hsla(237, 62%, 54%, 0.5) 98%,
+    hsl(189, 100%, 79%) 98.5%,
+    hsla(237, 62%, 54%, 0.75) 99%,
+    transparent
+  );
+
+  transform: translate3d(-53%, -60%, calc(var(--perspective) / 7 * -1))
+    rotate3d(1.2, -0.6, 0, 62deg);
+
+  filter: blur(0.05rem);
+  animation: ring 10s infinite ease-in-out;
+}
+
+@keyframes ring {
+  100%,
+  0% {
+    translate: 0 0 0;
+  }
+
+  50% {
+    translate: 0 0 calc(var(--perspective) / 10);
+  }
+}
+
+#highlight-day-6 .img-wrapper {
+  animation:
+    hoveringY 8s infinite ease-in-out alternate,
+    hovering 10s infinite ease-in-out;
+}
+@keyframes hoveringY {
+  0%,
+  100% {
+    rotate: y 5deg;
+  }
+  50% {
+    rotate: y -5deg;
+  }
+}
+
+#highlight-day-6 .ghost-0,
+#highlight-day-6 .ghost-1,
+#highlight-day-6 .ghost-2,
+#highlight-day-6 .ghost-3,
+#highlight-day-6 .ghost-4,
+#highlight-day-6 .ghost-5 {
+  width: 6vw;
+  left: 50%;
+  top: 0;
+  border-radius: 10rem;
+  background: hsla(0, 0%, 30%, 0.5);
+
+  transform-origin: center;
+  rotate: z -30deg;
+  --z-step: calc(var(--perspective) / 4);
+}
+#highlight-day-6 .ghost-0:before,
+#highlight-day-6 .ghost-1:before,
+#highlight-day-6 .ghost-2:before,
+#highlight-day-6 .ghost-3:before,
+#highlight-day-6 .ghost-4:before,
+#highlight-day-6 .ghost-5:before {
+  top: 2vw;
+  left: 2vw;
+  width: 2vw;
+  height: calc(100% - 4vw);
+  border-radius: 5rem;
+}
+#highlight-day-6 .ghost-0,
+#highlight-day-6 .ghost-3 {
+  --orange-glow: 0 0 0.35rem hsl(17, 100%, 99%), 0 0 0.75rem hsl(39, 100%, 70%),
+    0 0 0.75rem hsl(41, 100%, 50%), 0 0 1.5rem hsl(23, 100%, 50%),
+    0 0 2.75rem hsl(16, 100%, 50%), 0 0 0.75rem hsl(41, 100%, 50%);
+  box-shadow: var(--orange-glow);
+}
+#highlight-day-6 .ghost-0:before,
+#highlight-day-6 .ghost-3:before {
+  box-shadow: var(--orange-glow) inset;
+}
+#highlight-day-6 .ghost-1,
+#highlight-day-6 .ghost-4 {
+  --blue-glow: 0 0 0.5rem hsl(203, 100%, 99%), 0 0 0.5rem hsl(203, 100%, 90%),
+    0 0 0.75rem hsl(203, 100%, 60%), 0 0 1.25rem hsl(203, 100%, 50%),
+    0 0 2.5rem hsl(190, 100%, 50%), 0 0 0.75rem hsl(203, 100%, 60%);
+  box-shadow: var(--blue-glow);
+}
+#highlight-day-6 .ghost-1:before,
+#highlight-day-6 .ghost-4:before {
+  box-shadow: var(--blue-glow) inset;
+}
+#highlight-day-6 .ghost-2,
+#highlight-day-6 .ghost-5 {
+  --purple-glow: 0 0 0.5rem hsl(326, 100%, 99%), 0 0 0.5rem hsl(326, 100%, 86%),
+    0 0 0.75rem hsl(321, 100%, 60%), 0 0 1.25rem hsl(321, 100%, 50%),
+    0 0 2.5rem hsl(305, 100%, 50%), 0 0 0.75rem hsl(321, 100%, 60%);
+  box-shadow: var(--purple-glow);
+}
+#highlight-day-6 .ghost-2:before,
+#highlight-day-6 .ghost-5:before {
+  box-shadow: var(--purple-glow) inset;
+}
+@keyframes glow-travel {
+  0% {
+    transform: translate(-200vw, 50vh);
+  }
+  70% {
+    transform: translate(200vw, 50vh);
+    animation-timing-function: step-start;
+  }
+  100% {
+    transform: translate(-200vw, 50vh);
+  }
+  0% {
+    rotate: revert;
+  }
+  70% {
+    rotate: z -50deg;
+    animation-timing-function: step-start;
+  }
+}
+
+#highlight-day-6 .ghost-0 {
+  --anim-travel-delay: 0s;
+}
+#highlight-day-6 .ghost-1 {
+  --anim-travel-delay: 1s;
+}
+#highlight-day-6 .ghost-2 {
+  --anim-travel-delay: 2s;
+}
+#highlight-day-6 .ghost-3 {
+  --anim-travel-delay: -3s;
+}
+#highlight-day-6 .ghost-4 {
+  --anim-travel-delay: -4s;
+}
+#highlight-day-6 .ghost-5 {
+  --anim-travel-delay: -5s;
+}
+
+#highlight-day-6 .ghost-0,
+#highlight-day-6 .ghost-1,
+#highlight-day-6 .ghost-2 {
+  translate: -50% -50% calc(var(--z-step) * -1);
+  transform: translate(-200vw, 50vh);
+  animation: glow-travel 12s var(--anim-travel-delay) infinite ease-in-out;
+}
+#highlight-day-6 .ghost-3,
+#highlight-day-6 .ghost-4,
+#highlight-day-6 .ghost-5 {
+  translate: -50% 0 var(--z-step);
+  transform: translate(-200vw, 50vh);
+  animation: glow-travel 12s var(--anim-travel-delay) infinite ease-in-out
+    reverse;
+}
