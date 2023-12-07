@@ -226,6 +226,7 @@ h1 {
   background: radial-gradient(closest-side, var(--gold-red), transparent);
   padding: 1rem;
   text-shadow: var(--text-shadow-default);
+  pointer-events: none;
 }
 .door {
   position: relative;
