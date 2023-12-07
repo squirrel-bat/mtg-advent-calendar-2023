@@ -16,22 +16,22 @@ function addHighlightHandler(el, id, img) {
     hightlight.classList.add('highlight')
     hightlight.style.setProperty('transform-origin', getCenterOfElement(img))
 
-    const imgWrapper = document.createElement('div')
-    imgWrapper.classList.add('img-wrapper')
-    imgWrapper.appendChild(img.cloneNode())
-
-    const createGhosts = function* (amount) {
+    const createGhosts = function* (amount, prefix = '') {
       for (let i = 0; i < amount; i++) {
         const partA = document.createElement('div')
         const partB = document.createElement('div')
-        partA.classList.add('part-a')
-        partB.classList.add('part-b')
+        partA.classList.add([prefix, 'part-a'].filter(Boolean).join('-'))
+        partB.classList.add([prefix, 'part-b'].filter(Boolean).join('-'))
         const e = document.createElement('div')
-        e.classList.add('ghost-' + i)
+        e.classList.add([prefix, 'ghost-' + i].filter(Boolean).join('-'))
         e.append(partA, partB)
         yield e
       }
     }
+
+    const imgWrapper = document.createElement('div')
+    imgWrapper.classList.add('img-wrapper')
+    imgWrapper.append(img.cloneNode(), ...createGhosts(3, 'inner'))
 
     hightlight.append(imgWrapper, ...createGhosts(6))
     document.querySelector('body').appendChild(hightlight)
