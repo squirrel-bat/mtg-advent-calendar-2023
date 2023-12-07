@@ -219,6 +219,14 @@ h1 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.open .day-overlay {
+  z-index: 1;
+  font-weight: bold;
+  color: var(--white);
+  background: radial-gradient(closest-side, var(--gold-red), transparent);
+  padding: 1rem;
+  text-shadow: var(--text-shadow-default);
+}
 .door {
   position: relative;
   display: flex;
@@ -226,6 +234,7 @@ h1 {
   aspect-ratio: 61/85;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 .door,
 figure,
