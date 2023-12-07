@@ -219,6 +219,9 @@ h1 {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.day-overlay {
+  pointer-events: none;
+}
 .open .day-overlay {
   z-index: 1;
   font-weight: bold;
