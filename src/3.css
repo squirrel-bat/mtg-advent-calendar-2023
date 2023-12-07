@@ -325,7 +325,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  --opacity: 0.85;
+  --opacity: 0.9;
   background: radial-gradient(
     rgba(0, 116, 178, var(--opacity)),
     rgba(53, 192, 215, var(--opacity)) 70%,
@@ -340,8 +340,8 @@
   --mask: linear-gradient(
     170deg,
     transparent,
-    black 20%,
-    black 50%,
+    black 15%,
+    black 55%,
     transparent 90%
   );
   mask: var(--mask);
