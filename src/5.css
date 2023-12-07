@@ -82,7 +82,7 @@
   left: unset;
   right: -2%;
   bottom: -3%;
-  filter: var(--left-shadow);
+  filter: var(--right-shadow);
   transform-origin: 97% 91%;
   scale: 0;
   animation: pop-in var(--anim-vine-right-duration) forwards ease-out;
