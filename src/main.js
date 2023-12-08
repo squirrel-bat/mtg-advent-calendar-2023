@@ -72,7 +72,7 @@ function handleDoorClick(e) {
   e.target.removeEventListener('click', handleDoorClick)
   setTimeout(() => {
     addHighlightHandler(e.target, id, img)
-  }, 900)
+  }, 500)
 }
 
 function makeItSnow(amount = 100) {
