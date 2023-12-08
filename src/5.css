@@ -132,12 +132,12 @@
   translate: 100% 100%;
   background: linear-gradient(
       to top right,
-      rgb(87, 28, 19),
+      rgb(87, 25, 19),
       transparent 45%,
       transparent 55%,
-      rgb(87, 28, 19)
+      rgb(87, 25, 19)
     ),
-    rgb(203, 61, 40);
+    rgb(180, 60, 38);
   transform: rotate3d(1, -1, 0, 80deg);
   scale: 0;
   animation: bloom 3s var(--anim-vine-left-duration) forwards;
@@ -378,12 +378,12 @@
   translate: 100% 100%;
   background: linear-gradient(
       to top right,
-      rgb(87, 28, 19),
+      rgb(87, 25, 19),
       transparent 45%,
       transparent 55%,
-      rgb(87, 28, 19)
+      rgb(87, 25, 19)
     ),
-    rgb(203, 61, 40);
+    rgb(180, 60, 38);
   rotate: z calc(0turn + var(--rotate-Z-offset));
   transform: rotate3d(1, -1, 0, 80deg);
   scale: 0;
