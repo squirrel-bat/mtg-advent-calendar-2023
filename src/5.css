@@ -176,11 +176,27 @@
   animation: rotateZ 5s;
 }
 
+/*white flowers*/
+#highlight-day-5 .ghost-1:before,
+#highlight-day-5 .ghost-1 .part-a:before,
+#highlight-day-5 .ghost-1 .part-a:after,
+#highlight-day-5 .ghost-1 .part-b:before,
+#highlight-day-5 .ghost-1 .part-b:after,
 #highlight-day-5 .ghost-3:before,
 #highlight-day-5 .ghost-3 .part-a:before,
 #highlight-day-5 .ghost-3 .part-a:after,
 #highlight-day-5 .ghost-3 .part-b:before,
-#highlight-day-5 .ghost-3 .part-b:after {
+#highlight-day-5 .ghost-3 .part-b:after,
+#highlight-day-5 .ghost-4:before,
+#highlight-day-5 .ghost-4 .part-a:before,
+#highlight-day-5 .ghost-4 .part-a:after,
+#highlight-day-5 .ghost-4 .part-b:before,
+#highlight-day-5 .ghost-4 .part-b:after,
+#highlight-day-5 .ghost-5:before,
+#highlight-day-5 .ghost-5 .part-a:before,
+#highlight-day-5 .ghost-5 .part-a:after,
+#highlight-day-5 .ghost-5 .part-b:before,
+#highlight-day-5 .ghost-5 .part-b:after {
   mask: var(--leaf) center/contain no-repeat;
   -webkit-mask: var(--leaf) center/contain no-repeat;
   max-height: 50%;
@@ -235,31 +251,6 @@
   --bloom-delay: calc(var(--anim-vine-left-duration) * 0.7);
 }
 
-#highlight-day-5 .ghost-4:before,
-#highlight-day-5 .ghost-4 .part-a:before,
-#highlight-day-5 .ghost-4 .part-a:after,
-#highlight-day-5 .ghost-4 .part-b:before,
-#highlight-day-5 .ghost-4 .part-b:after {
-  mask: var(--leaf) center/contain no-repeat;
-  -webkit-mask: var(--leaf) center/contain no-repeat;
-  max-height: 50%;
-  width: auto;
-  aspect-ratio: 1/1;
-  transform-origin: 2% 2%;
-  translate: 100% 100%;
-  background: linear-gradient(
-      to top right,
-      rgb(171, 159, 109),
-      transparent 45%,
-      transparent 55%,
-      rgb(171, 159, 109)
-    ),
-    var(--flower-white);
-  rotate: z calc(0turn + var(--rotate-Z-offset));
-  transform: rotate3d(1, -1, 0, 80deg);
-  scale: 0;
-  animation: bloom 3s var(--bloom-delay) forwards;
-}
 #highlight-day-5 .ghost-4 .part-a:before {
   rotate: z calc(0.19turn + var(--rotate-Z-offset));
 }
@@ -306,31 +297,6 @@
   }
 }
 
-#highlight-day-5 .ghost-5:before,
-#highlight-day-5 .ghost-5 .part-a:before,
-#highlight-day-5 .ghost-5 .part-a:after,
-#highlight-day-5 .ghost-5 .part-b:before,
-#highlight-day-5 .ghost-5 .part-b:after {
-  mask: var(--leaf) center/contain no-repeat;
-  -webkit-mask: var(--leaf) center/contain no-repeat;
-  max-height: 50%;
-  width: auto;
-  aspect-ratio: 1/1;
-  transform-origin: 2% 2%;
-  translate: 100% 100%;
-  background: linear-gradient(
-      to top right,
-      rgb(171, 159, 109),
-      transparent 45%,
-      transparent 55%,
-      rgb(171, 159, 109)
-    ),
-    var(--flower-white);
-  rotate: z calc(0turn + var(--rotate-Z-offset));
-  transform: rotate3d(1, -1, 0, 80deg);
-  scale: 0;
-  animation: bloom 3s var(--bloom-delay) forwards;
-}
 #highlight-day-5 .ghost-5 .part-a:before {
   rotate: z calc(0.19turn + var(--rotate-Z-offset));
 }
@@ -421,31 +387,6 @@
   filter: drop-shadow(-0.2rem 0.3rem var(--black-50));
   --bloom-delay: calc(var(--anim-vine-left-duration) * 0.8);
   animation: rotateZ 3s;
-}
-#highlight-day-5 .ghost-1:before,
-#highlight-day-5 .ghost-1 .part-a:before,
-#highlight-day-5 .ghost-1 .part-a:after,
-#highlight-day-5 .ghost-1 .part-b:before,
-#highlight-day-5 .ghost-1 .part-b:after {
-  mask: var(--leaf) center/contain no-repeat;
-  -webkit-mask: var(--leaf) center/contain no-repeat;
-  max-height: 50%;
-  width: auto;
-  aspect-ratio: 1/1;
-  transform-origin: 2% 2%;
-  translate: 100% 100%;
-  background: linear-gradient(
-      to top right,
-      rgb(171, 159, 109),
-      transparent 45%,
-      transparent 55%,
-      rgb(171, 159, 109)
-    ),
-    var(--flower-white);
-  rotate: z calc(0turn + var(--rotate-Z-offset));
-  transform: rotate3d(1, -1, 0, 80deg);
-  scale: 0;
-  animation: bloom 3s var(--bloom-delay) forwards;
 }
 #highlight-day-5 .ghost-1 .part-a:before {
   rotate: z calc(0.19turn + var(--rotate-Z-offset));
