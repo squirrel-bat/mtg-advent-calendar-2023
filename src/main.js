@@ -79,28 +79,30 @@ function makeItSnow(amount = 100) {
   const protoFlake = document.createElement('div')
   protoFlake.classList.add('snowflake')
   protoFlake.textContent = '❅'
-  // TODO rewrite into Generator function (see ghosts)
-  const flakes = []
-  for (let i = 0; i < amount; i++) {
-    const flake = protoFlake.cloneNode(true)
-    flake.style.setProperty(
-      '--start-x',
-      Math.floor(Math.random() * 100).toString() + '%',
-    )
-    flake.style.setProperty('--speed', Math.random().toString())
-    flake.style.setProperty(
-      '--drift',
-      (Math.random() * (Math.random() > 0.5 ? 1 : -1)).toString(),
-    )
-    flake.style.setProperty('--opacity', (0.5 + Math.random() / 2).toString())
-    flake.style.setProperty('--rotation', Math.random().toString())
-    flake.style.setProperty('--scale-mod', (Math.random() / 2).toString())
 
-    flakes.push(flake)
+  const createFlakes = function* (amount) {
+    for (let i = 0; i < amount; i++) {
+      const flake = protoFlake.cloneNode(true)
+      flake.style.setProperty(
+        '--start-x',
+        Math.floor(Math.random() * 100).toString() + '%',
+      )
+      flake.style.setProperty('--speed', Math.random().toString())
+      flake.style.setProperty(
+        '--drift',
+        (Math.random() * (Math.random() > 0.5 ? 1 : -1)).toString(),
+      )
+      flake.style.setProperty('--opacity', (0.5 + Math.random() / 2).toString())
+      flake.style.setProperty('--rotation', Math.random().toString())
+      flake.style.setProperty('--scale-mod', (Math.random() / 2).toString())
+
+      yield flake
+    }
   }
+
   const snow = document.createElement('div')
   snow.id = 'snow'
-  snow.append(...flakes)
+  snow.append(...createFlakes(amount))
   document.querySelector('body').appendChild(snow)
 }
 
