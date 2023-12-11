@@ -1,6 +1,4 @@
 :root {
-  /*--red: rgb(175, 28, 18);*/
-  /*--red-dark: rgb(117, 3, 3);*/
   --red: rgb(150, 25, 17);
   --red-dark: rgb(112, 8, 8);
   --black-50: rgba(20, 20, 20, 0.5);
@@ -49,6 +47,11 @@
 @font-face {
   font-family: 'AmaticSC';
   src: url('AmaticSC-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'YoungSerif';
+  src: url('YoungSerif-Regular.ttf');
 }
 
 *,

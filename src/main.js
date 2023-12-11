@@ -11,10 +11,10 @@ function getCenterOfElement(el) {
 
 function addHighlightHandler(el, id, img) {
   el.addEventListener('click', () => {
-    const hightlight = document.createElement('div')
-    hightlight.id = 'highlight-' + id
-    hightlight.classList.add('highlight')
-    hightlight.style.setProperty('transform-origin', getCenterOfElement(img))
+    const highlight = document.createElement('div')
+    highlight.id = 'highlight-' + id
+    highlight.classList.add('highlight')
+    highlight.style.setProperty('transform-origin', getCenterOfElement(img))
 
     const createGhosts = function* (amount, prefix = '') {
       for (let i = 0; i < amount; i++) {
@@ -33,14 +33,14 @@ function addHighlightHandler(el, id, img) {
     imgWrapper.classList.add('img-wrapper')
     imgWrapper.append(img.cloneNode(), ...createGhosts(3, 'inner'))
 
-    hightlight.append(imgWrapper, ...createGhosts(6))
-    document.querySelector('body').appendChild(hightlight)
-    hightlight.classList.add('pop-in')
-    hightlight.addEventListener('click', () => {
-      hightlight.classList.remove('pop-in')
-      hightlight.classList.add('pop-out')
-      hightlight.addEventListener('animationend', () => {
-        hightlight.remove()
+    highlight.append(imgWrapper, ...createGhosts(6))
+    document.querySelector('body').prepend(highlight)
+    highlight.classList.add('pop-in')
+    highlight.addEventListener('click', () => {
+      highlight.classList.remove('pop-in')
+      highlight.classList.add('pop-out')
+      highlight.addEventListener('animationend', () => {
+        highlight.remove()
       })
     })
   })
@@ -72,7 +72,7 @@ function handleDoorClick(e) {
   e.target.removeEventListener('click', handleDoorClick)
   setTimeout(() => {
     addHighlightHandler(e.target, id, img)
-    e.target.click()
+    if (document.querySelector('.highlight') === null) e.target.click()
   }, 1300)
 }
 

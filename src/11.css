@@ -1,0 +1,226 @@
+#highlight-day-11 {
+  --sky-blue: #568bc0;
+  --sky-blue-light: hsl(210, 58%, 77%);
+  --cup: hsl(35, 100%, 93%);
+  --cup-dark: hsl(35, 27%, 79%);
+  --chocolate: hsl(22, 50%, 22%);
+
+  background: linear-gradient(to top, var(--white) 10%, transparent 33%),
+    radial-gradient(
+      ellipse 300% 100% at 10% 100%,
+      var(--white) 15%,
+      var(--sky-blue) 33%,
+      transparent 33.1%
+    ),
+    radial-gradient(
+      ellipse 55% 50% at 110% 100%,
+      var(--white) 80%,
+      var(--sky-blue-light) 99.9%,
+      transparent 100%
+    ),
+    linear-gradient(to bottom, var(--sky-blue), var(--white) 70%);
+}
+#highlight-day-11 ~ #snow {
+  z-index: 2;
+}
+#highlight-day-11 [class*='inner-ghost-'],
+#highlight-day-11 [class*='inner-ghost-']:before,
+#highlight-day-11 [class*='inner-ghost-']:after,
+#highlight-day-11 [class*='inner-ghost-'] [class*='inner-part-'],
+#highlight-day-11 [class*='inner-ghost-'] [class*='inner-part-']:before,
+#highlight-day-11 [class*='inner-ghost-'] [class*='inner-part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#highlight-day-11 .img-wrapper {
+  perspective: var(--perspective);
+
+  transform-origin: bottom center;
+  animation: cup 12.5s infinite ease-in-out;
+}
+@keyframes cup {
+  100%,
+  0% {
+    rotate: z -1.5deg;
+  }
+  50% {
+    rotate: z 1.5deg;
+  }
+}
+#highlight-day-11 .img-wrapper img {
+  box-shadow: 0 0.5vh 1vh var(--black-50);
+  scale: 0.9;
+  transform-origin: center;
+  rotate: 0 -1 0.5 14deg;
+  animation: hovering 10s infinite ease-in-out;
+}
+#highlight-day-11 .inner-ghost-1 {
+  --mask: linear-gradient(to bottom, transparent 11%, black 11%);
+
+  mask: var(--mask) cover no-repeat;
+  -webkit-mask-image: var(--mask);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+}
+#highlight-day-11 .inner-ghost-0,
+#highlight-day-11 .inner-ghost-1 {
+  top: 50%;
+  scale: 1.15;
+  border-radius: 100% 100% / 22% 22%;
+}
+#highlight-day-11 .inner-ghost-0 {
+  z-index: -1;
+  background: linear-gradient(to right, var(--cup), var(--cup-dark));
+  box-shadow: 0 0.5vh 1vh var(--black-50);
+}
+#highlight-day-11 .inner-ghost-0:before,
+#highlight-day-11 .inner-ghost-1:after {
+  background: linear-gradient(to right, var(--cup-dark), var(--cup));
+  border-radius: 100% 100% / 22% 22%;
+
+  --mask: radial-gradient(
+    ellipse 47% 10% at 50% 11%,
+    transparent 100%,
+    black 101%
+  );
+
+  mask: var(--mask) cover no-repeat;
+  -webkit-mask-image: var(--mask);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+}
+#highlight-day-11 .inner-ghost-0 .inner-part-a {
+  top: 15%;
+  height: 65%;
+  width: 50%;
+  left: unset;
+  right: -45%;
+  background: radial-gradient(
+      ellipse 100% 80% at 27.5% 47.5%,
+      var(--cup-dark) 40%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 100% 80% at 25% 50%,
+      var(--cup) 60%,
+      transparent 60.2%
+    );
+
+  --mask: radial-gradient(
+    ellipse 100% 80% at 25% 50%,
+    transparent 45%,
+    black 45.2%,
+    black 59.7%,
+    transparent 59.9%
+  );
+
+  mask: var(--mask) cover no-repeat;
+  -webkit-mask-image: var(--mask);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+
+  box-shadow: inset 2vh 0 3vh var(--cup-dark);
+}
+#highlight-day-11 .inner-ghost-0:after {
+  top: 5%;
+  height: 90%;
+  scale: 0.95;
+  background: var(--chocolate);
+  border-radius: 100% 100% / 28% 28%;
+}
+#highlight-day-11 .inner-ghost-1:before {
+  top: 5%;
+  height: 90%;
+  scale: 0.95;
+  background: var(--chocolate);
+  border-radius: 100% 100% / 28% 28%;
+
+  --mask: linear-gradient(to bottom, transparent 9%, black 9.25%);
+
+  mask: var(--mask) cover no-repeat;
+  -webkit-mask-image: var(--mask);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+}
+
+#highlight-day-11 .inner-ghost-0:after,
+#highlight-day-11 .inner-ghost-1:before {
+  animation: hovering 10s -1s infinite ease-in-out;
+}
+
+#highlight-day-11 .inner-ghost-2 {
+  font-family: YoungSerif, sans-serif;
+  font-weight: bold;
+  font-size: 7vh;
+  color: black;
+  perspective: var(--perspective);
+}
+
+#highlight-day-11 .inner-ghost-2 .inner-part-a,
+#highlight-day-11 .inner-ghost-2 .inner-part-b {
+  perspective: var(--perspective);
+  perspective-origin: top center;
+  top: 65%;
+}
+#highlight-day-11 .inner-ghost-2 .inner-part-a {
+  background: center 12% /64% no-repeat url('./mana_black_stamp.svg');
+}
+#highlight-day-11 .inner-ghost-2 .inner-part-a:before {
+  width: auto;
+  height: auto;
+  content: 'B';
+  left: 21%;
+  top: 50%;
+  rotate: y -21deg;
+}
+#highlight-day-11 .inner-ghost-2 .inner-part-a:after {
+  width: auto;
+  height: auto;
+  content: 'E';
+  left: 35%;
+  top: 51.25%;
+  rotate: y -7deg;
+}
+#highlight-day-11 .inner-ghost-2 .inner-part-b:before {
+  width: auto;
+  height: auto;
+  content: 'S';
+  left: unset;
+  right: 35%;
+  top: 51.25%;
+  rotate: y 7deg;
+}
+#highlight-day-11 .inner-ghost-2 .inner-part-b:after {
+  width: auto;
+  height: auto;
+  content: 'T';
+  left: unset;
+  right: 20%;
+  top: 50%;
+  rotate: y 21deg;
+}
+#highlight-day-11 .inner-ghost-2:before {
+  content: "'S";
+  font-size: 8vh;
+  height: auto;
+  width: auto;
+  top: 96%;
+  left: 82%;
+  rotate: y 25deg;
+  color: var(--red);
+}
+#highlight-day-11 .inner-ghost-2:after {
+  content: 'SON';
+  font-size: 10vh;
+  height: auto;
+  width: auto;
+  top: 128.5%;
+  left: 50%;
+  translate: -51% 0;
+  color: green;
+}
