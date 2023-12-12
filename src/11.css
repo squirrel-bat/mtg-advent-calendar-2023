@@ -26,9 +26,9 @@
 #highlight-day-11 [class*='inner-ghost-'],
 #highlight-day-11 [class*='inner-ghost-']:before,
 #highlight-day-11 [class*='inner-ghost-']:after,
-#highlight-day-11 [class*='inner-ghost-'] [class*='inner-part-'],
-#highlight-day-11 [class*='inner-ghost-'] [class*='inner-part-']:before,
-#highlight-day-11 [class*='inner-ghost-'] [class*='inner-part-']:after {
+#highlight-day-11 [class*='inner-part-'],
+#highlight-day-11 [class*='inner-part-']:before,
+#highlight-day-11 [class*='inner-part-']:after {
   content: '';
   position: absolute;
   top: 0;
