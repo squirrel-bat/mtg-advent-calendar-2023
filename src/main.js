@@ -31,7 +31,7 @@ function addHighlightHandler(el, id, img) {
 
     const imgWrapper = document.createElement('div')
     imgWrapper.classList.add('img-wrapper')
-    imgWrapper.append(img.cloneNode(), ...createGhosts(3, 'inner'))
+    imgWrapper.append(img.cloneNode(), ...createGhosts(4, 'inner'))
 
     highlight.append(imgWrapper, ...createGhosts(6))
     document.querySelector('body').prepend(highlight)
