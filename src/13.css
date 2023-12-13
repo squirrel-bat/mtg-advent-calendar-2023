@@ -1,0 +1,142 @@
+#highlight-day-13 [class*='ghost-'],
+#highlight-day-13 [class*='ghost-']:before,
+#highlight-day-13 [class*='ghost-']:after,
+#highlight-day-13 [class*='part-'],
+#highlight-day-13 [class*='part-']:before,
+#highlight-day-13 [class*='part-']:after,
+#highlight-day-13 [class*='inner-ghost-'],
+#highlight-day-13 [class*='inner-ghost-']:before,
+#highlight-day-13 [class*='inner-ghost-']:after,
+#highlight-day-13 [class*='inner-part-'],
+#highlight-day-13 [class*='inner-part-']:before,
+#highlight-day-13 [class*='inner-part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#highlight-day-13 {
+  font-family: 'YoungSerif', sans-serif;
+  font-size: 10vh;
+  background: linear-gradient(
+    to bottom,
+    hsl(224, 59%, 25%),
+    hsl(224, 59%, 30%)
+  );
+  perspective: var(--perspective);
+  transform-style: flat;
+
+  --anim-duration: 7s;
+}
+
+#highlight-day-13 .ghost-0 {
+  filter: drop-shadow(0 0.2vh 0.1vh #9cc2ff) drop-shadow(0 0 2vh #356eff);
+  z-index: -1;
+
+  animation: zoom-pulse 6s infinite ease-in-out alternate;
+}
+@keyframes zoom-pulse {
+  0% {
+    transform: translateZ(-10vh);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+#highlight-day-13 .ghost-0:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' font-size='40vh' font-weight='bold' height='250px' width='250px' color='%239cc2ff'%3E%3Ctext x='0' y='50vh' fill='currentcolor'%3E13%3C/text%3E%3Ctext x='47vw' y='99vh' fill='currentcolor'%3E13%3C/text%3E%3C/svg%3E");
+  width: 200vw;
+  aspect-ratio: 1/1;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transform-origin: center;
+
+  animation: rotateZ 120s infinite linear;
+}
+
+#highlight-day-13 .img-wrapper {
+  z-index: 1;
+  animation: hoveringY var(--anim-duration) infinite ease-in-out;
+
+  filter: drop-shadow(-1vh 1.5vh 0.5vh var(--black-50));
+}
+#highlight-day-13 .inner-ghost-0 .inner-part-a:before {
+  background: url('https://cards.scryfall.io/large/front/6/7/6750e203-1215-4203-b5b8-3f1b18940839.jpg')
+    center/cover no-repeat;
+  clip-path: circle(6% at 42% 19.5%);
+  transform-origin: 44% 15.2%;
+
+  animation: phile var(--anim-duration) infinite linear;
+}
+@keyframes phile {
+  0%,
+  25% {
+    scale: 1;
+    rotate: z 0deg;
+    opacity: 1;
+  }
+  60%,
+  95% {
+    scale: 3.8;
+    rotate: z -10deg;
+    opacity: 1;
+  }
+  100% {
+    scale: 3.8;
+    rotate: z -10deg;
+    opacity: 0;
+  }
+}
+#highlight-day-13 .inner-ghost-0 .inner-part-a:after,
+#highlight-day-13 .inner-ghost-0 .inner-part-b:before {
+  color: var(--white);
+  content: 'YESH,';
+  white-space: nowrap;
+  text-align: left;
+  font-size: 4vh;
+  font-weight: bold;
+  height: auto;
+  width: auto;
+  left: 50%;
+  top: 15%;
+  translate: -50% -50%;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000;
+  animation: ccch var(--anim-duration) infinite step-start;
+}
+@keyframes ccch {
+  0%,
+  64.9%,
+  100% {
+    opacity: 0;
+  }
+  65%,
+  95% {
+    opacity: 1;
+  }
+}
+#highlight-day-13 .inner-ghost-0 .inner-part-b:before {
+  content: 'PHIRTHEEN';
+  top: 50%;
+  animation: thirteen var(--anim-duration) infinite step-start;
+}
+
+@keyframes thirteen {
+  0%,
+  69.9%,
+  100% {
+    opacity: 0;
+  }
+  70%,
+  95% {
+    opacity: 1;
+  }
+}
