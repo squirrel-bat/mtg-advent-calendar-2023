@@ -1,0 +1,191 @@
+#highlight-day-14:before,
+#highlight-day-14:after,
+#highlight-day-14 [class^='ghost-'],
+#highlight-day-14 [class^='ghost-']:before,
+#highlight-day-14 [class^='ghost-']:after,
+#highlight-day-14 [class^='part-'],
+#highlight-day-14 [class^='part-']:before,
+#highlight-day-14 [class^='part-']:after,
+#highlight-day-14 [class^='inner-ghost-'],
+#highlight-day-14 [class^='inner-ghost-']:before,
+#highlight-day-14 [class^='inner-ghost-']:after,
+#highlight-day-14 [class^='inner-part-'],
+#highlight-day-14 [class^='inner-part-']:before,
+#highlight-day-14 [class^='inner-part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#highlight-day-14 {
+  background: #3a414c;
+  perspective: var(--perspective);
+  transform-style: flat;
+  --anim-fraction-duration: 5s;
+}
+#highlight-day-14 [class^='inner-part-']:before,
+#highlight-day-14 [class^='inner-part-']:after {
+  background: url('https://cards.scryfall.io/large/front/8/1/81875876-c1a0-4f64-8dfc-39217b5e4020.jpg')
+    center/contain no-repeat;
+  border-radius: var(--card-border-radius);
+  --anim-fraction-delay: 0s;
+  animation: slide-left var(--anim-fraction-duration) var(--anim-fraction-delay)
+    infinite;
+}
+
+/*left*/
+#highlight-day-14 .inner-ghost-0 .inner-part-a:before {
+  clip-path: inset(0 50% 85% 0);
+}
+#highlight-day-14 .inner-ghost-0 .inner-part-a:after {
+  --anim-fraction-delay: 700ms;
+  clip-path: inset(15% 30% 80% 0);
+}
+#highlight-day-14 .inner-ghost-0 .inner-part-b:before {
+  clip-path: inset(20% 55% 65% 0);
+}
+#highlight-day-14 .inner-ghost-0 .inner-part-b:after {
+  clip-path: inset(40% 45% 45% 0);
+  --anim-fraction-delay: 1000ms;
+}
+#highlight-day-14 .inner-ghost-1 .inner-part-a:before {
+  clip-path: inset(55% 40% 40% 0);
+}
+#highlight-day-14 .inner-ghost-1 .inner-part-a:after {
+  clip-path: inset(60% 47.5% 20% 0);
+  --anim-fraction-delay: 700ms;
+}
+#highlight-day-14 .inner-ghost-1 .inner-part-b:before {
+  clip-path: inset(80% 0 15% 0);
+  --anim-fraction-delay: 300ms;
+}
+#highlight-day-14 .inner-ghost-1 .inner-part-b:after {
+  clip-path: inset(85% 55% 0 0);
+}
+@keyframes slide-left {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+    scale: 1;
+  }
+  49.9% {
+    opacity: 0;
+  }
+  50% {
+    translate: 0 0;
+    scale: 1;
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    translate: -10% 0 calc(var(--perspective) / 2);
+    scale: 1.1 1.2;
+    opacity: 0;
+  }
+}
+
+/*right*/
+#highlight-day-14 .inner-ghost-2 .inner-part-a:before {
+  clip-path: inset(0 0 85% 50%);
+  animation-name: slide-right;
+  --anim-fraction-delay: 300ms;
+}
+#highlight-day-14 .inner-ghost-2 .inner-part-a:after {
+  clip-path: inset(15% 0 80% 70%);
+  animation-name: slide-right;
+  --anim-fraction-delay: 700ms;
+}
+#highlight-day-14 .inner-ghost-2 .inner-part-b:before {
+  clip-path: inset(20% 25% 65% 45%);
+  animation-name: slide-right;
+  --anim-fraction-delay: 700ms;
+}
+#highlight-day-14 .inner-ghost-2 .inner-part-b:after {
+  clip-path: inset(20% 0 65% 75%);
+  animation-name: slide-right;
+}
+#highlight-day-14 .inner-ghost-3 .inner-part-a:before {
+  clip-path: inset(35% 0 60% 0);
+  animation-name: slide-right;
+  --anim-fraction-delay: 300ms;
+}
+#highlight-day-14 .inner-ghost-3 .inner-part-a:after {
+  clip-path: inset(40% 0 45% 55%);
+  animation-name: slide-right;
+  --anim-fraction-delay: 700ms;
+}
+#highlight-day-14 .inner-ghost-3 .inner-part-b:before {
+  clip-path: inset(55% 0 20% 52.5%);
+  animation-name: slide-right;
+}
+#highlight-day-14 .inner-ghost-3 .inner-part-b:after {
+  clip-path: inset(85% 0 0 45%);
+  animation-name: slide-right;
+  --anim-fraction-delay: 700ms;
+}
+@keyframes slide-right {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+    scale: 1;
+  }
+  49.9% {
+    opacity: 0;
+  }
+  50% {
+    translate: 0 0;
+    scale: 1;
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    translate: 10% 0 calc(var(--perspective) / 2);
+    scale: 1.1 1.2;
+    opacity: 0;
+  }
+}
+
+#highlight-day-14 .img-wrapper {
+  z-index: 50;
+  animation: fracturing var(--anim-fraction-duration) 2.5s infinite;
+}
+@keyframes fracturing {
+  0%,
+  100% {
+    transform: translateZ(0);
+  }
+  70% {
+    transform: rotate3d(1, 1, -0.5, 10deg)
+      translateZ(calc(var(--perspective) * 0.1));
+  }
+}
+
+#highlight-day-14 .ghost-0 {
+  background: radial-gradient(
+    circle 150vh at 30vw 5vh,
+    hsl(249, 33%, 4%) 20%,
+    hsl(225, 63%, 19%)
+  );
+  z-index: -1;
+}
+
+#highlight-day-14 .ghost-1 {
+  background: radial-gradient(
+    circle min(98vh, 98vw) at 40vw 40vh,
+    #42a45d,
+    #378366,
+    #0a273b 40%,
+    transparent 40.5%
+  );
+  filter: drop-shadow(0 0 min(100vh, 100vw) black);
+  z-index: -1;
+  animation:
+    rotateZ 60s infinite linear,
+    fracturing var(--anim-fraction-duration) 2.5s infinite;
+}
