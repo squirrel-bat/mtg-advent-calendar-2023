@@ -1,0 +1,148 @@
+#highlight-day-15 [class*='ghost-'],
+#highlight-day-15 [class*='ghost-']:before,
+#highlight-day-15 [class*='ghost-']:after,
+#highlight-day-15 [class*='part-'],
+#highlight-day-15 [class*='part-']:before,
+#highlight-day-15 [class*='part-']:after,
+#highlight-day-15 [class*='inner-ghost-'],
+#highlight-day-15 [class*='inner-ghost-']:before,
+#highlight-day-15 [class*='inner-ghost-']:after,
+#highlight-day-15 [class*='inner-part-'],
+#highlight-day-15 [class*='inner-part-']:before,
+#highlight-day-15 [class*='inner-part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#highlight-day-15 {
+  --pink: #f5a4cd;
+  --white-pink: #f2f0f3;
+  background: radial-gradient(hsl(45, 78%, 68%), hsl(34, 59%, 35%));
+  transform-style: flat;
+  overflow: hidden;
+}
+#highlight-day-15 .inner-ghost-0,
+#highlight-day-15 .inner-ghost-1,
+#highlight-day-15 .inner-ghost-2 {
+  filter: drop-shadow(0 0 1vh #ea5ea2);
+  perspective: var(--perspective);
+  opacity: 0.95;
+}
+#highlight-day-15 .inner-ghost-0 .inner-part-a,
+#highlight-day-15 .inner-ghost-0 .inner-part-b,
+#highlight-day-15 .inner-ghost-1 .inner-part-a,
+#highlight-day-15 .inner-ghost-1 .inner-part-b {
+  overflow: hidden;
+  background: var(--pink);
+  border-radius: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  width: auto;
+
+  --mask-img: url('./fountain_beam.svg');
+  --mask: var(--mask-img), linear-gradient(transparent, transparent);
+
+  mask: var(--mask) cover no-repeat;
+  -webkit-mask-image: var(--mask);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+
+  animation: hovering 300ms infinite ease-in-out;
+}
+
+#highlight-day-15 .inner-ghost-0 .inner-part-a {
+  height: 200%;
+  top: -25%;
+  left: 2%;
+  rotate: y -30deg;
+}
+#highlight-day-15 .inner-ghost-0 .inner-part-b {
+  height: 200%;
+  scale: -1 1;
+  top: -25%;
+  left: -180%;
+  rotate: y 30deg;
+}
+#highlight-day-15 .inner-ghost-1 .inner-part-a {
+  top: 42%;
+  left: 26%;
+  rotate: y -30deg;
+}
+#highlight-day-15 .inner-ghost-1 .inner-part-b {
+  scale: -1 1;
+  top: 42%;
+  left: -65%;
+  rotate: y 30deg;
+}
+#highlight-day-15 .inner-ghost-2 .inner-part-a {
+  top: 100%;
+  left: 10%;
+  width: 80%;
+  height: 58%;
+  overflow: hidden;
+  z-index: -1;
+  background: var(--pink);
+  transform-origin: top;
+  scale: 2;
+  clip-path: inset(0 42% 0 42%);
+}
+
+#highlight-day-15 .inner-ghost-0 .inner-part-a:before,
+#highlight-day-15 .inner-ghost-0 .inner-part-a:after,
+#highlight-day-15 .inner-ghost-0 .inner-part-b:before,
+#highlight-day-15 .inner-ghost-0 .inner-part-b:after,
+#highlight-day-15 .inner-ghost-1 .inner-part-a:before,
+#highlight-day-15 .inner-ghost-1 .inner-part-a:after,
+#highlight-day-15 .inner-ghost-1 .inner-part-b:before,
+#highlight-day-15 .inner-ghost-1 .inner-part-b:after,
+#highlight-day-15 .inner-ghost-2 .inner-part-a:before,
+#highlight-day-15 .inner-ghost-2 .inner-part-a:after {
+  width: 100%;
+  background: repeating-linear-gradient(
+      56.5deg,
+      var(--pink),
+      #9dc5f7,
+      transparent 10%,
+      var(--pink) 20%
+    ),
+    repeating-linear-gradient(
+      56.5deg,
+      var(--white-pink) 5%,
+      var(--pink) 10%,
+      var(--white-pink) 15%,
+      var(--white-pink) 20%
+    );
+  animation: water 5s infinite linear;
+}
+#highlight-day-15 .inner-ghost-0 .inner-part-a:before,
+#highlight-day-15 .inner-ghost-0 .inner-part-b:before,
+#highlight-day-15 .inner-ghost-1 .inner-part-a:before,
+#highlight-day-15 .inner-ghost-1 .inner-part-b:before,
+#highlight-day-15 .inner-ghost-2 .inner-part-a:before {
+  left: -100%;
+}
+@keyframes water {
+  0% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 100% 0;
+  }
+}
+
+#highlight-day-15 .inner-ghost-0 {
+  z-index: -1;
+}
+#highlight-day-15 .inner-ghost-1 {
+  z-index: 1;
+}
+#highlight-day-15 .inner-ghost-2 {
+  z-index: 0;
+}
+#highlight-day-15 .img-wrapper {
+  animation: hovering 700ms infinite ease-in-out;
+}
