@@ -1,0 +1,226 @@
+#highlight-day-16 [class^='ghost-'],
+#highlight-day-16 [class^='ghost-']:before,
+#highlight-day-16 [class^='ghost-']:after,
+#highlight-day-16 [class^='part-'],
+#highlight-day-16 [class^='part-']:before,
+#highlight-day-16 [class^='part-']:after,
+#highlight-day-16 [class^='inner-ghost-'],
+#highlight-day-16 [class^='inner-ghost-']:before,
+#highlight-day-16 [class^='inner-ghost-']:after,
+#highlight-day-16 [class^='inner-part-'],
+#highlight-day-16 [class^='inner-part-']:before,
+#highlight-day-16 [class^='inner-part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#highlight-day-16 {
+  /*background: linear-gradient(#4f505e, #a6aab2 80%);*/
+  background: #4f505e;
+  perspective: var(--perspective);
+  perspective-origin: center;
+  transform-style: flat;
+  --animation-duration: 5s;
+}
+
+#highlight-day-16 .ghost-5 .part-a {
+  font-family: 'YoungSerif', sans-serif;
+  text-shadow: var(--text-shadow-default);
+  z-index: 99;
+  height: auto;
+  width: auto;
+  padding: 0.5em;
+  text-align: left;
+}
+#highlight-day-16 .ghost-5 .part-a:after {
+  content: '?';
+  background: var(--blue-dark);
+  color: var(--white);
+  border-radius: 50%;
+  position: static;
+  display: inline-block;
+  height: 1.3em;
+  aspect-ratio: 1/1;
+  width: auto;
+  text-align: center;
+}
+
+#highlight-day-16 .ghost-5 .part-a:hover:after {
+  content: 'Texture by mafon2 on OpenGameArt.org ---  https://opengameart.org/content/seamless-space-rocks-textures-pack-512px-mine-rocks-ch16png';
+  text-align: left;
+  width: 100vw;
+  background: unset;
+}
+#highlight-day-16 .ghost-0 {
+  z-index: -1;
+  perspective: var(--perspective);
+  perspective-origin: center calc(50vh + min(calc(30vw * (85 / 61)), 30vh));
+}
+#highlight-day-16 .ghost-0 .part-a {
+  height: max(200vh, 200vw);
+  width: auto;
+  aspect-ratio: 1/1;
+  background: radial-gradient(transparent, var(--black-50) 60%),
+    url('./stone_ground.png'), #54453a;
+  top: calc(50vh + min(calc(40vw * (85 / 61)), 40vh));
+  left: 50%;
+  translate: -50% -50%;
+  transform-origin: center;
+  border-radius: 50%;
+  rotate: x 80deg;
+  animation: transform-rotateZ 60s infinite linear;
+}
+
+#highlight-day-16 .ghost-0 .part-a:after {
+  background: radial-gradient(circle, var(--black-50) 10%, transparent 15%),
+    radial-gradient(circle at 20% 40%, rgba(91, 59, 16, 0.17), transparent 40%),
+    radial-gradient(circle at 60% 20%, rgba(91, 59, 16, 0.17), transparent 40%),
+    radial-gradient(circle at 70% 80%, rgba(91, 59, 16, 0.17), transparent 40%);
+  border-radius: 50%;
+}
+
+#highlight-day-16 .img-wrapper:after {
+  content: '';
+  background: url('https://backs.scryfall.io/large/2/2/222b7a3b-2321-4d4c-af19-19338b134971.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--card-border-radius);
+  rotate: y 0.5turn;
+  z-index: -1;
+}
+#highlight-day-16 .img-wrapper img {
+  transform: rotateY(0turn);
+  backface-visibility: hidden;
+}
+
+#highlight-day-16 .img-wrapper {
+  transform-style: preserve-3d;
+  animation:
+    stomp-card var(--animation-duration) infinite,
+    rotateY 60s infinite linear;
+}
+@keyframes rotateY {
+  0% {
+    rotate: y 0turn;
+  }
+  100% {
+    rotate: y -1turn;
+  }
+}
+@keyframes stomp-card {
+  0% {
+    transform: translateY(0);
+  }
+  10%,
+  13% {
+    transform: translateY(-20%);
+  }
+  15%,
+  17%,
+  19%,
+  21% {
+    transform: translateY(0);
+    scale: 1.01 0.99;
+  }
+  16%,
+  18%,
+  20% {
+    transform: translateY(2%);
+    scale: 0.99 1.01;
+  }
+}
+#highlight-day-16 .ghost-0 {
+  animation: stomp-ground var(--animation-duration) infinite ease-in-out;
+}
+@keyframes stomp-ground {
+  0%,
+  15%,
+  17%,
+  19%,
+  21% {
+    transform: translateY(0);
+  }
+  16%,
+  18%,
+  20% {
+    transform: translateY(2%);
+  }
+}
+
+/*fog*/
+#highlight-day-16 .inner-ghost-0 {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 246, 236, 0.15) 50%,
+    transparent
+  );
+  scale: 1 0;
+  transform-origin: bottom;
+  animation: stomp-dirt var(--animation-duration) infinite ease-out;
+}
+@keyframes stomp-dirt {
+  0%,
+  15% {
+    scale: 1 0;
+    opacity: 1;
+  }
+  40%,
+  100% {
+    scale: 1 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+#highlight-day-16 .ghost-1:before,
+#highlight-day-16 .inner-ghost-0:before {
+  background: radial-gradient(circle at 45% 50%, var(--white), transparent 40%),
+    radial-gradient(circle at 70% 50%, var(--white), transparent 40%),
+    radial-gradient(circle at 20% 30%, var(--white), transparent 50%),
+    radial-gradient(circle at 40% 90%, var(--white), transparent 30%);
+  --mask: radial-gradient(closest-side, black, transparent);
+  mask: var(--mask);
+  -webkit-mask-image: var(--mask);
+  mask-mode: alpha;
+  opacity: 0.8;
+  transform: translate(-25%, 25%);
+}
+
+#highlight-day-16 .ghost-1:after,
+#highlight-day-16 .inner-ghost-0:after {
+  background: radial-gradient(circle at 40% 66%, var(--white), transparent 30%),
+    radial-gradient(circle at 67% 70%, var(--white), transparent 40%),
+    radial-gradient(circle at 10% 50%, var(--white), transparent 40%),
+    radial-gradient(circle at 33% 10%, var(--white), transparent 45%);
+  --mask: radial-gradient(closest-side, black, transparent);
+  mask: var(--mask);
+  -webkit-mask-image: var(--mask);
+  mask-mode: alpha;
+  opacity: 0.8;
+  transform: translate(25%, 15%) rotateY(0.5turn);
+}
+
+#highlight-day-16 .ghost-1 {
+  z-index: -2;
+}
+
+#highlight-day-16 .ghost-1:before,
+#highlight-day-16 .ghost-1:after {
+  animation: fog-1 calc(var(--animation-duration) * 2.5) infinite ease-out;
+}
+#highlight-day-16 .ghost-1:after {
+  animation-name: fog-2;
+}
