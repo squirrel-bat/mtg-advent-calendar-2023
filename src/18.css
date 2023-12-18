@@ -1,0 +1,148 @@
+#highlight-day-18 [class^='ghost-'],
+#highlight-day-18 [class^='ghost-']:before,
+#highlight-day-18 [class^='ghost-']:after,
+#highlight-day-18 [class^='part-'],
+#highlight-day-18 [class^='part-']:before,
+#highlight-day-18 [class^='part-']:after,
+#highlight-day-18 [class^='inner-ghost-'],
+#highlight-day-18 [class^='inner-ghost-']:before,
+#highlight-day-18 [class^='inner-ghost-']:after,
+#highlight-day-18 [class^='inner-part-'],
+#highlight-day-18 [class^='inner-part-']:before,
+#highlight-day-18 [class^='inner-part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#highlight-day-18 {
+  background: linear-gradient(to bottom, #6b3d7a, #060410);
+  --animation-duration: 5s;
+  perspective: var(--perspective);
+  transform-style: flat;
+}
+
+#highlight-day-18 .inner-ghost-0 {
+  z-index: -1;
+  border-radius: var(--card-border-radius);
+  box-shadow:
+    0 0 2vh #d73627,
+    0 0 4vh #d73627,
+    0 0 5vh #d75627;
+  animation: card-glow var(--animation-duration) infinite alternate-reverse;
+}
+@keyframes card-glow {
+  0%,
+  10% {
+    scale: 1;
+  }
+  30%,
+  100% {
+    scale: 0.8;
+  }
+}
+#highlight-day-18 .inner-ghost-1 {
+  background: #f1e9cf;
+  box-shadow:
+    inset 0 0 2vh #fbd06f,
+    inset 0 0 3vh #fbd06f;
+  border-radius: var(--card-border-radius);
+  animation: card-heat var(--animation-duration) infinite alternate-reverse;
+}
+
+@keyframes card-heat {
+  0%,
+  10% {
+    opacity: 1;
+  }
+
+  30%,
+  100% {
+    opacity: 0;
+  }
+}
+
+#highlight-day-18 img {
+  animation: sword-img var(--animation-duration) infinite alternate-reverse;
+}
+@keyframes sword-img {
+  0%,
+  20% {
+    filter: sepia(1) saturate(6) hue-rotate(-40deg);
+  }
+  60%,
+  100% {
+    filter: none;
+  }
+}
+
+#highlight-day-18 .ghost-0 {
+  z-index: -1;
+  background: linear-gradient(
+      0.54turn,
+      hsl(343, 34%, 60%) -10%,
+      transparent 20%
+    ),
+    radial-gradient(#ff0018 20%, #a6214b, #570f3a 80%);
+  height: 90vh;
+  aspect-ratio: 1/1.8;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  box-shadow:
+    inset 0.25vh 0.5vh 1.5vh -1vh hsl(316, 31%, 57%),
+    0 0 2vh -1vh #a6214b;
+  border-radius: 35% 65% 50% 50% / 30% 20% 80% 70%;
+  transform-origin: center 60%;
+  animation:
+    hovering var(--animation-duration) infinite ease-in-out,
+    hit calc(var(--animation-duration) * 2) infinite ease-out;
+}
+@keyframes hit {
+  0%,
+  50%,
+  100% {
+    rotate: 0deg;
+  }
+  51% {
+    rotate: y 12deg;
+  }
+}
+
+#highlight-day-18 .img-wrapper {
+  animation: spin2win calc(var(--animation-duration) * 2) infinite ease-in;
+}
+@keyframes spin2win {
+  0%,
+  20% {
+    transform: rotateZ(0turn);
+  }
+  50% {
+    transform: rotateZ(-5turn);
+    animation-timing-function: ease-out;
+  }
+  80%,
+  100% {
+    transform: rotateZ(-10turn);
+  }
+  0%,
+  25%,
+  75%,
+  100% {
+    rotate: x 0deg;
+  }
+  50% {
+    rotate: x 80deg;
+  }
+  45%,
+  58% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.3;
+  }
+}
