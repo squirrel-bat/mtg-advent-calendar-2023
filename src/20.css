@@ -1,0 +1,162 @@
+#highlight-day-20 [class^='ghost-'],
+#highlight-day-20 [class^='ghost-']:before,
+#highlight-day-20 [class^='ghost-']:after,
+#highlight-day-20 [class^='part-'],
+#highlight-day-20 [class^='part-']:before,
+#highlight-day-20 [class^='part-']:after,
+#highlight-day-20 [class^='inner-ghost-'],
+#highlight-day-20 [class^='inner-ghost-']:before,
+#highlight-day-20 [class^='inner-ghost-']:after,
+#highlight-day-20 [class^='inner-part-'],
+#highlight-day-20 [class^='inner-part-']:before,
+#highlight-day-20 [class^='inner-part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#highlight-day-20 {
+  perspective: var(--perspective);
+  transform-style: flat;
+  background: #273254;
+  --animation-duration: 10s;
+}
+
+#highlight-day-20 .ghost-0:before {
+  background: radial-gradient(
+      80vw 60vh at center top,
+      #f8fafc,
+      #f8fafc 20%,
+      #70aace,
+      transparent
+    ),
+    linear-gradient(to top, #0e1623, #273254, #4f5fbd 45%);
+}
+#highlight-day-20 .ghost-1 {
+  perspective: var(--perspective);
+}
+#highlight-day-20 .ghost-1:before {
+  height: auto;
+  width: auto;
+  content: '🧍';
+  font-size: 15vh;
+  opacity: 0.5;
+  filter: blur(0.5vh) brightness(0.3);
+  --mask-img: linear-gradient(to bottom, transparent, black);
+  --mask: var(--mask-img), linear-gradient(transparent, transparent);
+
+  mask: var(--mask) cover no-repeat;
+  -webkit-mask-image: var(--mask);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+
+  transform-origin: bottom;
+  translate: -50% -50%;
+  --translate-start: translate3d(-30vw, 0, -30vh) rotateX(30deg);
+  --translate-end: translate3d(105vw, 0, 30vh) rotateX(30deg);
+  animation: person-move calc(var(--animation-duration) * 3) infinite linear;
+}
+@keyframes person-move {
+  0% {
+    transform: var(--translate-start);
+  }
+  100% {
+    transform: var(--translate-end);
+  }
+}
+
+#highlight-day-20 .ghost-2:before {
+  background: url('./vine-left.svg') no-repeat 0 0 / contain;
+  filter: hue-rotate(140deg) brightness(0.46) blur(0.3vh);
+  top: 20%;
+  left: -80%;
+  scale: -1 1;
+  --translate-start: 0 100%;
+  --translate-end: 0 0;
+  --translate-mid: 0 5%;
+  translate: var(--translate-start);
+  animation: tentacle var(--animation-duration) infinite ease-in-out;
+}
+#highlight-day-20 .ghost-2:after {
+  background: url('./vine-left.svg') no-repeat 0 0 / contain;
+  filter: hue-rotate(140deg) brightness(0.5) blur(0.5vh);
+  top: 30%;
+  left: 45%;
+  --translate-start: 0 100%;
+  --translate-end: 0 0;
+  --translate-mid: 0 5%;
+  translate: var(--translate-start);
+  scale: 0.75;
+  animation: tentacle var(--animation-duration)
+    calc(var(--animation-duration) * 0.07) infinite ease-in-out;
+}
+#highlight-day-20 .ghost-3:before {
+  background: url('./vine-left.svg') no-repeat 0 0 / contain;
+  filter: hue-rotate(140deg) brightness(0.4);
+  top: 20%;
+  left: 45%;
+  --translate-start: 0 100%;
+  --translate-end: 0 0;
+  --translate-mid: 0 5%;
+  translate: var(--translate-start);
+  scale: 1.2;
+  animation: tentacle var(--animation-duration)
+    calc(var(--animation-duration) * 0.04) infinite ease-in-out;
+  z-index: 6;
+}
+#highlight-day-20 .ghost-3:after {
+  background: url('./vine-left.svg') no-repeat 0 0 / contain;
+  filter: hue-rotate(140deg) brightness(0.46) blur(0.3vh);
+  top: 20%;
+  left: 75%;
+  scale: 0.9;
+  --translate-start: 0 100%;
+  --translate-end: 0 0;
+  --translate-mid: 0 5%;
+  translate: var(--translate-start);
+  animation: tentacle var(--animation-duration)
+    calc(var(--animation-duration) * 0.05) infinite ease-in-out;
+}
+@keyframes tentacle {
+  0%,
+  15%,
+  100% {
+    translate: var(--translate-start);
+  }
+  40%,
+  80% {
+    translate: var(--translate-end);
+  }
+  60% {
+    translate: var(--translate-mid);
+  }
+}
+
+#highlight-day-20 .ghost-4:after {
+  top: 50%;
+  --diameter: 3rem;
+  width: auto;
+  height: var(--diameter);
+  left: 75%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1/1;
+  background: radial-gradient(circle at 30% 30%, var(--white), transparent 40%);
+  border-radius: 50%;
+  outline: 0.15em solid var(--white);
+  transform-origin: center;
+  animation: bubble-1 4s infinite ease-in;
+  opacity: 0.25;
+  z-index: 99;
+}
+
+#highlight-day-20 .img-wrapper {
+  z-index: 5;
+  --translate-start: -50% 100%;
+  --translate-end: -50% -50%;
+  --translate-mid: -50% -45%;
+  translate: var(--translate-start);
+  animation: tentacle var(--animation-duration)
+    calc(var(--animation-duration) * 0.2) infinite ease-in-out;
+}
