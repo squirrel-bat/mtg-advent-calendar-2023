@@ -79,7 +79,7 @@ function handleDoorClick(e) {
 function makeItSnow(amount = 100) {
   const protoFlake = document.createElement('div')
   protoFlake.classList.add('snowflake')
-  protoFlake.textContent = '❅'
+  protoFlake.textContent = '❄'
 
   const createFlakes = function* (amount) {
     for (let i = 0; i < amount; i++) {
