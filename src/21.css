@@ -1,0 +1,112 @@
+#highlight-day-21 {
+  background: linear-gradient(
+    to bottom,
+    #c5d6d9,
+    #eceeef 60%,
+    #867a64 60%,
+    #efddbe calc(60% + 0.1vh),
+    #bca882
+  );
+
+  --animation-duration: 11s;
+}
+
+#highlight-day-21 .ghost-5:before,
+#highlight-day-21 .ghost-5:after {
+  content: '';
+  position: absolute;
+  height: 50vh;
+  width: 50vh;
+  top: 100%;
+  left: 50%;
+  translate: -50% -50%;
+  transform: rotate(-45deg) skew(25deg, 25deg);
+  border: 0.2vh solid #252523;
+  filter: blur(0.1vh);
+}
+#highlight-day-21 .ghost-5:before {
+  background: radial-gradient(
+      50.2% 70.04% at 125% 100%,
+      var(--black-50) 100%,
+      transparent 100%
+    ),
+    radial-gradient(70% 70% at 135% 100%, #867a64 99.8%, transparent 100%),
+    linear-gradient(to right, #252523, #867a64 70%, #bfb197);
+  --mask-img: radial-gradient(
+    50% 70% at 125% 100%,
+    transparent 100%,
+    black 99%
+  );
+  --mask: var(--mask-img), linear-gradient(transparent, transparent);
+
+  mask: var(--mask) cover no-repeat;
+  -webkit-mask-image: var(--mask);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+}
+#highlight-day-21 .ghost-5:after {
+  background: linear-gradient(to right, #252523, #867a64 70%, #bfb197);
+  translate: -95% -40%;
+}
+
+#highlight-day-21 .img-wrapper {
+  border: 0.2vh solid #867a64;
+  scale: 0.2;
+  translate: -100vw -50%;
+  animation: tumbleweed var(--animation-duration) infinite ease-out;
+}
+@keyframes tumbleweed {
+  0% {
+    translate: -120vw -35%;
+  }
+  25% {
+    translate: 100vw -35%;
+  }
+  25.1% {
+    translate: 100vw -32.5%;
+  }
+  50% {
+    translate: -120vw -32.5%;
+  }
+  50.1% {
+    translate: -120vw -25%;
+  }
+  70% {
+    translate: -50% -25%;
+  }
+  75%,
+  100% {
+    translate: -50% -50%;
+  }
+
+  0% {
+    rotate: z 0turn;
+  }
+  25% {
+    rotate: z 3turn;
+  }
+  50%,
+  100% {
+    rotate: z 0turn;
+  }
+
+  0%,
+  25% {
+    scale: 0.2;
+  }
+  25.1%,
+  50% {
+    scale: 0.4;
+  }
+  50.1%,
+  70% {
+    scale: 0.8;
+  }
+  75%,
+  95% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
+}
