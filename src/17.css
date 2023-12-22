@@ -44,10 +44,10 @@
   border-radius: var(--card-border-radius);
   scale: 0.1;
   z-index: -1;
-  animation: card-glow calc(var(--animation-duration) * 2) var(--anim-delay)
+  animation: sliver-glow calc(var(--animation-duration) * 2) var(--anim-delay)
     infinite;
 }
-@keyframes card-glow {
+@keyframes sliver-glow {
   0%,
   10%,
   100% {
@@ -163,7 +163,7 @@
   width: 117%;
   left: -8%;
   aspect-ratio: 1/0.13;
-  top: 54%;
+  top: 54.1%;
   --shadow-depth: 0.2vh;
   animation-name: tail-bit-c;
 }
