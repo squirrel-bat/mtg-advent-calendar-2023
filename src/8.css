@@ -257,13 +257,17 @@
   10% {
     --mask: url('./bite_0.svg'), url('./bite_1.svg'), url('./bite_2.svg'),
       url('./bite_3.svg'), url('./bite_4.svg'), url('./bite_5.svg'),
-      url('./bite_6.svg'), url('./bite_7.svg'), var(--mask-bg);
+      url('./bite_6.svg'), url('./bite_7.svg');
 
     mask: var(--mask);
     mask-composite: var(--mask-composite);
     mask-repeat: no-repeat;
     mask-size: cover;
     mask-type: var(--mask-mode);
+
+    -webkit-mask-image: var(--mask);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
   }
   20% {
     --mask: url('./bite_1.svg'), url('./bite_2.svg'), url('./bite_3.svg'),
@@ -275,17 +279,24 @@
     mask-repeat: no-repeat;
     mask-size: cover;
     mask-type: var(--mask-mode);
+
+    -webkit-mask-image: var(--mask);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
   }
   30% {
     --mask: url('./bite_2.svg'), url('./bite_3.svg'), url('./bite_4.svg'),
-      url('./bite_5.svg'), url('./bite_6.svg'), url('./bite_7.svg'),
-      var(--mask-bg);
+      url('./bite_5.svg'), url('./bite_6.svg'), url('./bite_7.svg');
 
     mask: var(--mask);
     mask-composite: var(--mask-composite);
     mask-repeat: no-repeat;
     mask-size: cover;
     mask-type: var(--mask-mode);
+
+    -webkit-mask-image: var(--mask);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
   }
   40% {
     --mask: url('./bite_3.svg'), url('./bite_4.svg'), url('./bite_5.svg'),
@@ -296,6 +307,10 @@
     mask-repeat: no-repeat;
     mask-size: cover;
     mask-type: var(--mask-mode);
+
+    -webkit-mask-image: var(--mask);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
   }
   50% {
     --mask: url('./bite_4.svg'), url('./bite_5.svg'), url('./bite_6.svg'),
@@ -306,16 +321,23 @@
     mask-repeat: no-repeat;
     mask-size: cover;
     mask-type: var(--mask-mode);
+
+    -webkit-mask-image: var(--mask);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
   }
   60% {
-    --mask: url('./bite_5.svg'), url('./bite_6.svg'), url('./bite_7.svg'),
-      var(--mask-bg);
+    --mask: url('./bite_5.svg'), url('./bite_6.svg'), url('./bite_7.svg');
 
     mask: var(--mask);
     mask-composite: var(--mask-composite);
     mask-repeat: no-repeat;
     mask-size: cover;
     mask-type: var(--mask-mode);
+
+    -webkit-mask-image: var(--mask);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
   }
   70% {
     --mask: url('./bite_6.svg'), url('./bite_7.svg');
@@ -325,6 +347,10 @@
     mask-repeat: no-repeat;
     mask-size: cover;
     mask-type: var(--mask-mode);
+
+    -webkit-mask-image: var(--mask);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
   }
   80% {
     --mask: url('./bite_7.svg');
@@ -334,6 +360,10 @@
     mask-repeat: no-repeat;
     mask-size: cover;
     mask-type: var(--mask-mode);
+
+    -webkit-mask-image: var(--mask);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
   }
   90%,
   100% {
@@ -344,6 +374,19 @@
     mask-repeat: no-repeat;
     mask-size: cover;
     mask-type: var(--mask-mode);
+
+    -webkit-mask-image: var(--mask);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+  }
+  80%,
+  10% {
+    opacity: 1;
+  }
+  90%,
+  100%,
+  0.5% {
+    opacity: 0;
   }
 }
 
