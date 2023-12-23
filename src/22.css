@@ -1,0 +1,297 @@
+#highlight-day-22:before,
+#highlight-day-22:after,
+#highlight-day-22 [class^='ghost-'],
+#highlight-day-22 [class^='ghost-']:before,
+#highlight-day-22 [class^='ghost-']:after,
+#highlight-day-22 [class^='part-'],
+#highlight-day-22 [class^='part-']:before,
+#highlight-day-22 [class^='part-']:after,
+#highlight-day-22 [class^='inner-ghost-'],
+#highlight-day-22 [class^='inner-ghost-']:before,
+#highlight-day-22 [class^='inner-ghost-']:after,
+#highlight-day-22 [class^='inner-part-'],
+#highlight-day-22 [class^='inner-part-']:before,
+#highlight-day-22 [class^='inner-part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#highlight-day-22 {
+  perspective: var(--perspective);
+  transform-style: flat;
+  --wall-color: #1a1511;
+}
+
+#highlight-day-22:before {
+  height: 101%;
+  width: 101%;
+  top: -0.5%;
+  left: -0.5%;
+  background: linear-gradient(
+    -18deg,
+    #481d22,
+    #732518 10%,
+    #d5972c 10%,
+    #732518,
+    #481d22 50%,
+    #1e191e
+  );
+  filter: blur(0.1vh);
+  z-index: -1;
+}
+
+#highlight-day-22:after {
+  height: 60vh;
+  aspect-ratio: 1/1;
+  width: auto;
+  top: 22%;
+  left: 44%;
+  translate: -50% -50%;
+  border-radius: 100%;
+  background: linear-gradient(to bottom, #201917 10%, #471b14, #a12f22 90%);
+  outline: 0.3vh solid hsla(6, 65%, 38%, 10%);
+  z-index: -1;
+  animation: hovering 8s infinite ease-in-out;
+}
+
+/*Dear IDEA,*/
+/*noinspection Duplicates*/
+#highlight-day-22 .img-wrapper:after {
+  content: '';
+  background: url('https://backs.scryfall.io/large/2/2/222b7a3b-2321-4d4c-af19-19338b134971.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--card-border-radius);
+  rotate: y 0.5turn;
+  z-index: -1;
+}
+#highlight-day-22 .img-wrapper img {
+  transform: rotateY(0turn);
+  backface-visibility: hidden;
+}
+#highlight-day-22 .img-wrapper {
+  transform-style: preserve-3d;
+  --scale: 2;
+  --perspective: calc(100vh * var(--scale));
+  translate: -50% -50% calc(var(--perspective) * -1);
+
+  animation: rotateY 30s infinite linear;
+}
+
+#highlight-day-22 .img-wrapper:after,
+#highlight-day-22 .img-wrapper img {
+  scale: calc(var(--scale) + 1);
+}
+
+#highlight-day-22 .inner-ghost-0 {
+  width: 400%;
+  left: 50%;
+  translate: -50% 0;
+  rotate: y 45deg;
+  transform: translateZ(calc(var(--perspective) * -1)) translateY(50%);
+}
+
+#highlight-day-22 .inner-ghost-0:before {
+  background: linear-gradient(91deg, var(--wall-color) 50%, transparent 50%),
+    linear-gradient(89deg, transparent 75%, var(--wall-color) 75%);
+  clip-path: polygon(
+    1% 50%,
+    2% 40%,
+    5% 28%,
+    10% 26.5%,
+    22% 26%,
+    26% 26%,
+    26.5% 24%,
+    32% 23.5%,
+    42.5% 24%,
+    80% 16%,
+    90% 17%,
+    93% 18%,
+    95% 18%,
+    95.5% 21%,
+    96% 28%,
+    97.5% 38%,
+    99.5% 80%,
+    100% 100%,
+    0 100%
+  );
+}
+#highlight-day-22 .inner-ghost-0:after {
+  width: 25.5%;
+  aspect-ratio: 1/1;
+  height: auto;
+  top: 10%;
+  left: 50%;
+  border-radius: 100%;
+  --arch-width: -15vh;
+  outline: calc(var(--arch-width) * -1) solid var(--wall-color);
+  clip-path: inset(var(--arch-width) var(--arch-width) 50% var(--arch-width));
+}
+#highlight-day-22 .inner-ghost-1 {
+  scale: 2;
+  left: 50%;
+  translate: -50% 0;
+  background: linear-gradient(
+    to right,
+    var(--wall-color) 18%,
+    transparent 18%,
+    transparent 41%,
+    var(--wall-color) 41%,
+    var(--wall-color) 59%,
+    transparent 59%,
+    transparent 82%,
+    var(--wall-color) 82%
+  );
+  container: ghost-1 / size;
+  --arch-width: -18cqw;
+  rotate: y -45deg;
+  transform: translateZ(calc(var(--perspective) * -1));
+}
+#highlight-day-22 .inner-ghost-1 .inner-part-a:before,
+#highlight-day-22 .inner-ghost-1 .inner-part-a:after,
+#highlight-day-22 .inner-ghost-1 .inner-part-b:before,
+#highlight-day-22 .inner-ghost-1 .inner-part-b:after {
+  width: 23%;
+  aspect-ratio: 1/1;
+  height: auto;
+  border-radius: 100%;
+  left: 18%;
+  top: calc(var(--arch-width) * -1);
+  outline: calc(var(--arch-width) * -1) solid var(--wall-color);
+  clip-path: inset(var(--arch-width) var(--arch-width) 50% var(--arch-width));
+}
+#highlight-day-22 .inner-ghost-1:before,
+#highlight-day-22 .inner-ghost-1:after {
+  background: var(--wall-color);
+  height: calc(var(--arch-width) * -1);
+}
+#highlight-day-22 .inner-ghost-1:after {
+  top: 50%;
+}
+#highlight-day-22 .inner-ghost-1 .inner-part-b {
+  top: 50%;
+}
+#highlight-day-22 .inner-ghost-1 .inner-part-a:after,
+#highlight-day-22 .inner-ghost-1 .inner-part-b:after {
+  left: unset;
+  right: 18%;
+}
+
+#highlight-day-22 .inner-ghost-2 {
+  scale: 2;
+  left: 50%;
+  translate: -50% 0;
+  container: ghost-2 / size;
+  rotate: y -45deg;
+  transform: translateZ(calc(var(--perspective) * 1));
+}
+#highlight-day-22 .inner-ghost-2 .inner-part-a:before {
+  background: var(--wall-color);
+  width: 6%;
+  height: 50%;
+  top: -45%;
+  left: 22%;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+#highlight-day-22 .inner-ghost-2:before {
+  width: 50%;
+  background: repeating-linear-gradient(
+      to bottom,
+      var(--wall-color),
+      var(--wall-color) 18cqh,
+      transparent 18cqh,
+      transparent 30cqh
+    ),
+    linear-gradient(
+      to right,
+      var(--wall-color) 33%,
+      transparent 33%,
+      transparent 45%,
+      var(--wall-color) 45%,
+      var(--wall-color) 55%,
+      transparent 55%,
+      transparent 67%,
+      var(--wall-color) 67%
+    );
+  border-radius: 50cqw 50cqw 0 0;
+}
+#highlight-day-22 .inner-ghost-2:after {
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 49.9%;
+  background: repeating-linear-gradient(
+      to bottom,
+      var(--wall-color),
+      var(--wall-color) 15cqh,
+      transparent 15cqh,
+      transparent 40cqh
+    ),
+    linear-gradient(
+      to right,
+      var(--wall-color) 33%,
+      transparent 33%,
+      transparent 45%,
+      var(--wall-color) 45%,
+      var(--wall-color) 55%,
+      transparent 55%,
+      transparent 67%,
+      var(--wall-color) 67%
+    );
+  border-top-right-radius: 20cqw;
+}
+
+#highlight-day-22 .inner-ghost-3 {
+  left: 50%;
+  translate: -50% 0;
+  background: linear-gradient(
+    to right,
+    var(--wall-color) 20%,
+    transparent 20%,
+    transparent 80%,
+    var(--wall-color) 80%
+  );
+  container: ghost-3 / size;
+  clip-path: polygon(
+    0 -40%,
+    100% -40%,
+    100% 16%,
+    97% 16%,
+    97% 80%,
+    100% 80%,
+    100% 100%,
+    80% 100%,
+    80% 80%,
+    83% 80%,
+    83% 16%,
+    17% 16%,
+    17% 80%,
+    20% 80%,
+    20% 100%,
+    0 100%,
+    0 80%,
+    3% 80%,
+    3% 16%,
+    0 16%
+  );
+  rotate: y 45deg;
+  transform: translateZ(calc(var(--perspective) * 1)) translateY(50%);
+}
+#highlight-day-22 .inner-ghost-3:after {
+  width: 60%;
+  aspect-ratio: 1/1;
+  height: auto;
+  left: 20%;
+  top: -20%;
+  border-radius: 100%;
+  outline: 20cqw solid var(--wall-color);
+  clip-path: inset(-20cqw -20cqw 50% -20cqw);
+}
