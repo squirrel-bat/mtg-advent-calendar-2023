@@ -10,7 +10,7 @@
 }
 
 #highlight-day-19 {
-  --animation-duration: 8s;
+  --animation-duration: 10s;
   transform-style: flat;
   perspective: var(--perspective);
 }
