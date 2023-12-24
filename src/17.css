@@ -1,3 +1,4 @@
+#highlight-day-17:after,
 #highlight-day-17 [class^='ghost-'],
 #highlight-day-17 [class^='ghost-']:before,
 #highlight-day-17 [class^='ghost-']:after,
@@ -25,16 +26,21 @@
   --animation-duration: 5s;
   --anim-delay: 1s;
 
-  background: linear-gradient(
-      to bottom,
-      hsl(32, 37%, 8%) 12%,
-      transparent 12.1%
-    ),
-    radial-gradient(
-      circle 200vh at 50% -90vh,
-      #324e7c 80%,
-      hsl(35, 20%, 45%) 80.1%
-    );
+  background: radial-gradient(
+    120% 100% at top center,
+    hsl(30, 40%, 9%),
+    hsl(35, 40%, 18%)
+  );
+}
+
+#highlight-day-17:after {
+  background: radial-gradient(
+    circle 200vh at 50% -90vh,
+    #324e7c 80%,
+    hsl(35, 20%, 45%) 80.1%
+  );
+  clip-path: inset(11% 0 0 0);
+  z-index: -2;
 }
 
 #highlight-day-17 .inner-ghost-0 .inner-part-a:before {
