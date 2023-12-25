@@ -34,6 +34,15 @@ function addHighlightHandler(el, id, img) {
     imgWrapper.append(img.cloneNode(), ...createGhosts(4, 'inner'))
 
     highlight.append(imgWrapper, ...createGhosts(6))
+
+    if (id === 'day-24') {
+      let thankYou = document.createElement('div')
+      thankYou.classList.add('thank-you')
+      thankYou.innerHTML = `<p>...you want more? Awesome! ❤️<br>Here's links to all my projects: <a href="https://ko-fi.com/squirrelbat" target="_blank">ko-fi.com/squirrel-bat</a><br>Thanks for checking them out, you're amazing!</p>`
+
+      highlight.querySelector('.ghost-5').append(thankYou)
+    }
+
     document.querySelector('body').prepend(highlight)
     highlight.classList.add('pop-in')
     highlight.addEventListener('click', () => {

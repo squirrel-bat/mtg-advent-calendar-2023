@@ -1,0 +1,1376 @@
+#highlight-day-24:before,
+#highlight-day-24:after,
+#highlight-day-24 [class^='ghost-'],
+#highlight-day-24 [class^='ghost-']:before,
+#highlight-day-24 [class^='ghost-']:after,
+#highlight-day-24 [class^='part-'],
+#highlight-day-24 [class^='part-']:before,
+#highlight-day-24 [class^='part-']:after,
+#highlight-day-24 [class^='inner-ghost-'],
+#highlight-day-24 [class^='inner-ghost-']:before,
+#highlight-day-24 [class^='inner-ghost-']:after,
+#highlight-day-24 [class^='inner-part-'],
+#highlight-day-24 [class^='inner-part-']:before,
+#highlight-day-24 [class^='inner-part-']:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#highlight-day-24 {
+  --tree-blue: hsl(200, 100%, 60%);
+  --tree-pink: hsl(330, 80%, 70%);
+  --tree-blue-dark-lit: hsl(225, 55%, 40%);
+  --tree-blue-dark-lit-50: hsla(225, 55%, 40%, 50%);
+  --tree-blue-dark: hsl(230, 80%, 23%);
+  --tree-blue-darker: hsl(230, 80%, 16%);
+  --red-light: hsl(0, 82%, 51%);
+
+  --cupcake-delay: 0.5s;
+
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--tree-blue-dark-lit-50) 55%,
+      transparent
+    ),
+    radial-gradient(#fff 50%, var(--tree-blue) 150%);
+
+  --animation-duration: 20s;
+  perspective: var(--perspective);
+  transform-style: preserve-3d;
+}
+#highlight-day-24:before {
+  background: radial-gradient(
+      90% 90% at 30% -35%,
+      transparent 90%,
+      var(--tree-blue-dark) 90.1%,
+      var(--tree-blue-dark) 102%,
+      transparent 102.1%
+    ),
+    radial-gradient(
+      90% 90% at 80% -38%,
+      transparent 90%,
+      var(--tree-blue-dark) 90.1%,
+      var(--tree-blue-dark) 102%,
+      transparent 102.1%
+    );
+  --mask: linear-gradient(to bottom, var(--black-50), black 40%);
+  mask: var(--mask);
+  -webkit-mask-image: var(--mask);
+  mask-mode: alpha;
+  z-index: -1;
+}
+
+#highlight-day-24 .inner-ghost-0:after {
+  background: url('https://cards.scryfall.io/large/front/2/7/27f53bed-7075-4303-aa9e-fcca0a266e19.jpg')
+    0 0 / cover;
+  border-radius: var(--card-border-radius);
+}
+#highlight-day-24 .ghost-0 {
+  background: linear-gradient(to bottom, var(--white-25), transparent),
+    linear-gradient(
+      96deg,
+      transparent 49%,
+      var(--tree-blue-dark-lit) 49.1%,
+      var(--tree-blue-dark) 65%,
+      transparent 65.2%
+    ),
+    linear-gradient(
+      101deg,
+      transparent 34.8%,
+      var(--tree-blue-dark) 35%,
+      var(--tree-blue-dark-lit) 44%,
+      var(--tree-blue-dark-lit) 57%,
+      transparent 57%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 92%,
+      var(--tree-blue-dark) 92.1%,
+      var(--tree-blue-darker) 100%
+    );
+  z-index: -1;
+}
+#highlight-day-24 .ghost-0:before {
+  background: radial-gradient(circle at 45% 50%, #fff, transparent 40%),
+    radial-gradient(circle at 70% 50%, var(--tree-pink), transparent 40%),
+    radial-gradient(circle at 20% 30%, var(--tree-pink), transparent 50%),
+    radial-gradient(circle at 40% 90%, var(--tree-pink), transparent 30%);
+
+  --mask: radial-gradient(closest-side, black, transparent);
+  mask: var(--mask);
+  -webkit-mask-image: var(--mask);
+  mask-mode: alpha;
+  transform: translate(-40%, -10%);
+}
+
+#highlight-day-24 .ghost-0:after {
+  background: radial-gradient(circle at 40% 66%, #fff, transparent 30%),
+    radial-gradient(circle at 67% 70%, var(--tree-blue), transparent 40%),
+    radial-gradient(circle at 10% 50%, var(--tree-blue), transparent 40%),
+    radial-gradient(circle at 33% 10%, var(--tree-blue), transparent 45%);
+
+  --mask: radial-gradient(closest-side, black, transparent);
+  mask: var(--mask);
+  -webkit-mask-image: var(--mask);
+  mask-mode: alpha;
+  transform: translate(40%, -5%) rotateY(0.5turn);
+  z-index: -1;
+}
+
+#highlight-day-24 .ghost-0 .part-a {
+  background: radial-gradient(
+    70% 70% at 50% 60%,
+    hsl(135, 25%, 60%),
+    hsl(160, 51%, 24%),
+    hsl(160, 32%, 8%)
+  );
+
+  box-shadow: inset 0 0.5vh 1vh var(--black-50);
+}
+
+/*donut*/
+#highlight-day-24 .inner-ghost-1 {
+  z-index: 0;
+  width: min(30vw, 30vh);
+  aspect-ratio: 1/1;
+  height: auto;
+  background: radial-gradient(#1c0100, #860c00 15%, transparent 50%);
+}
+#highlight-day-24 .inner-ghost-1:before {
+  border-radius: 100%;
+  background: radial-gradient(
+    50% 50%,
+    var(--white) 30%,
+    #ff5151 35%,
+    #860c00 35.5%,
+    #860c00 37%,
+    #c46a1c 37.9%,
+    #e09b43 55%,
+    #e09b43 80%,
+    #c46a1c
+  );
+  --clip-path: polygon(
+    0 50%,
+    35% 50%,
+    45% 48%,
+    39.3% 39.3%,
+    48% 45%,
+    50% 35%,
+    52% 45%,
+    60.7% 39.3%,
+    55% 48%,
+    65% 50%,
+    55% 52%,
+    60.7% 60.7%,
+    52% 55%,
+    50% 65%,
+    48% 55%,
+    39.3% 60.7%,
+    45% 52%,
+    35% 50%,
+    0 50%,
+    0 100%,
+    100% 100%,
+    100% 0,
+    0 0
+  );
+  clip-path: var(--clip-path);
+  animation:
+    donut-teeth 120ms infinite alternate ease-in-out,
+    rotateZ 2s infinite linear;
+}
+@keyframes donut-teeth {
+  0% {
+    clip-path: var(--clip-path);
+  }
+  100% {
+    clip-path: polygon(
+      0 50%,
+      35% 50%,
+      43% 46.5%,
+      39.3% 39.3%,
+      46.5% 43%,
+      50% 35%,
+      53.5% 43%,
+      60.7% 39.3%,
+      57% 46.5%,
+      65% 50%,
+      57% 53.5%,
+      60.7% 60.7%,
+      53.5% 57%,
+      50% 65%,
+      46.5% 57%,
+      39.3% 60.7%,
+      43% 53.5%,
+      35% 50%,
+      0 50%,
+      0 100%,
+      100% 100%,
+      100% 0,
+      0 0
+    );
+  }
+}
+#highlight-day-24 .inner-ghost-1:after {
+  background: radial-gradient(
+    50% 50%,
+    transparent 43%,
+    #62230c 43.3%,
+    #773215 60%,
+    #773215 80%,
+    #62230c 97%,
+    transparent 97.3%
+  );
+  clip-path: polygon(
+    0% 49%,
+    3% 35%,
+    10% 21%,
+    18% 16%,
+    26% 8%,
+    34% 3%,
+    42% 1%,
+    54% 2%,
+    63% 3%,
+    69% 4%,
+    71% 7%,
+    79% 9%,
+    84% 17%,
+    91% 26%,
+    95% 32%,
+    99% 42%,
+    100% 54%,
+    98% 66%,
+    92% 76%,
+    87% 81%,
+    78% 87%,
+    73% 92%,
+    66% 96%,
+    54% 100%,
+    46% 99%,
+    38% 96%,
+    32% 97%,
+    25% 93%,
+    22% 87%,
+    16% 82%,
+    11% 82%,
+    6% 74%,
+    4% 63%,
+    1% 56%,
+    0% 55%,
+    0% 50%,
+    28% 50%,
+    30% 60%,
+    37% 68%,
+    48% 71.5%,
+    63% 70%,
+    69% 64%,
+    70% 57%,
+    73% 48%,
+    71% 38%,
+    60% 30%,
+    40% 30%,
+    32% 36%,
+    28% 50%,
+    0 50%
+  );
+}
+#highlight-day-24 .inner-ghost-1 .inner-part-a {
+  z-index: 1;
+}
+
+/*eyes*/
+#highlight-day-24 .inner-ghost-1 .inner-part-a:before,
+#highlight-day-24 .inner-ghost-1 .inner-part-a:after,
+#highlight-day-24 .inner-ghost-2 .inner-part-a:before,
+#highlight-day-24 .inner-ghost-2 .inner-part-a:after,
+#highlight-day-24 .inner-ghost-3 .inner-part-a:before,
+#highlight-day-24 .inner-ghost-3 .inner-part-a:after {
+  z-index: 1;
+  width: 30%;
+  aspect-ratio: 1/1.4;
+  height: auto;
+  translate: -50% 0;
+  transform-origin: center;
+  background: radial-gradient(50% 50%, black 29%, white 30%);
+  border-radius: 50%;
+  clip-path: polygon(0 30%, 100% 75%, 100% 100%, 0 100%);
+}
+/*eye shadow*/
+#highlight-day-24 .inner-ghost-1 .inner-part-a,
+#highlight-day-24 .inner-ghost-2 .inner-part-a,
+#highlight-day-24 .inner-ghost-3 .inner-part-a {
+  filter: drop-shadow(0 0 0.5vh var(--black-50));
+}
+#highlight-day-24 .inner-ghost-1 .inner-part-a:before {
+  left: 28%;
+}
+#highlight-day-24 .inner-ghost-1 .inner-part-a:after {
+  left: 72%;
+  scale: -1 1;
+}
+
+/*cup cake*/
+#highlight-day-24 .inner-ghost-2 {
+  width: min(30vw, 30vh);
+  aspect-ratio: 1/1.2;
+  height: auto;
+  --pink-light: #ffdeec;
+  --pink: #ff97c4;
+  --pink-dark: #e85d9a;
+
+  container: ghost-3 / size;
+
+  background: radial-gradient(
+    49% 25% at 50% 60%,
+    hsl(25, 64%, 18%),
+    hsl(25, 64%, 10%) 100%,
+    transparent 100.4%
+  );
+}
+#highlight-day-24 .inner-ghost-2:before {
+  background: linear-gradient(to bottom, transparent 98%, var(--pink-dark) 102%),
+    linear-gradient(
+      80.25deg,
+      transparent 10%,
+      var(--pink-dark) 10.3%,
+      var(--pink-dark) 11%,
+      transparent 11.3%
+    ),
+    linear-gradient(
+      82deg,
+      transparent 15%,
+      var(--pink-dark) 15.3%,
+      var(--pink-dark) 16%,
+      transparent 16.3%
+    ),
+    linear-gradient(
+      84deg,
+      transparent 20%,
+      var(--pink-dark) 20.3%,
+      var(--pink-dark) 21%,
+      transparent 21.3%
+    ),
+    linear-gradient(
+      86deg,
+      transparent 25%,
+      var(--pink-dark) 25.3%,
+      var(--pink-dark) 26%,
+      transparent 26.3%
+    ),
+    linear-gradient(
+      87deg,
+      transparent 30%,
+      var(--pink-dark) 30.3%,
+      var(--pink-dark) 31%,
+      transparent 31.3%
+    ),
+    linear-gradient(
+      88deg,
+      transparent 35%,
+      var(--pink-dark) 35.3%,
+      var(--pink-dark) 36%,
+      transparent 36.3%
+    ),
+    linear-gradient(
+      89deg,
+      transparent 40%,
+      var(--pink-dark) 40.3%,
+      var(--pink-dark) 41%,
+      transparent 41.3%
+    ),
+    linear-gradient(
+      89.5deg,
+      transparent 45%,
+      var(--pink-dark) 45.3%,
+      var(--pink-dark) 46%,
+      transparent 46.3%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 50%,
+      var(--pink-dark) 50.3%,
+      var(--pink-dark) 51%,
+      transparent 51.3%
+    ),
+    linear-gradient(
+      90.5deg,
+      transparent 55%,
+      var(--pink-dark) 55.3%,
+      var(--pink-dark) 56%,
+      transparent 56.3%
+    ),
+    linear-gradient(
+      91deg,
+      transparent 60%,
+      var(--pink-dark) 60.3%,
+      var(--pink-dark) 61%,
+      transparent 61.3%
+    ),
+    linear-gradient(
+      92deg,
+      transparent 65%,
+      var(--pink-dark) 65.3%,
+      var(--pink-dark) 66%,
+      transparent 66.3%
+    ),
+    linear-gradient(
+      93deg,
+      transparent 70%,
+      var(--pink-dark) 70.3%,
+      var(--pink-dark) 71%,
+      transparent 71.3%
+    ),
+    linear-gradient(
+      94deg,
+      transparent 75%,
+      var(--pink-dark) 75.3%,
+      var(--pink-dark) 76%,
+      transparent 76.3%
+    ),
+    linear-gradient(
+      96deg,
+      transparent 80%,
+      var(--pink-dark) 80.3%,
+      var(--pink-dark) 81%,
+      transparent 81.3%
+    ),
+    linear-gradient(
+      98deg,
+      transparent 85%,
+      var(--pink-dark) 85.3%,
+      var(--pink-dark) 86%,
+      transparent 86.3%
+    ),
+    linear-gradient(
+      99.75deg,
+      transparent 89%,
+      var(--pink-dark) 89.3%,
+      var(--pink-dark) 90%,
+      transparent 90.3%
+    ),
+    linear-gradient(80deg, var(--pink), transparent 50%),
+    linear-gradient(-80deg, var(--pink), transparent 50%),
+    linear-gradient(to bottom, transparent 60%, var(--pink-light) 60%);
+  clip-path: polygon(
+    0 62.5%,
+    2.5% 60%,
+    5% 62.5%,
+    7.5% 60%,
+    10% 62.5%,
+    12.5% 60%,
+    15% 62.5%,
+    17.5% 60%,
+    20% 62.5%,
+    22.5% 60%,
+    25% 62.5%,
+    27.5% 60%,
+    30% 62.5%,
+    32.5% 60%,
+    35% 62.5%,
+    37.5% 60%,
+    40% 62.5%,
+    42.5% 60%,
+    45% 62.5%,
+    47.5% 60%,
+    50% 62.5%,
+    52.5% 60%,
+    55% 62.5%,
+    57.5% 60%,
+    60% 62.5%,
+    62.5% 60%,
+    65% 62.5%,
+    67.5% 60%,
+    70% 62.5%,
+    72.5% 60%,
+    75% 62.5%,
+    77.5% 60%,
+    80% 62.5%,
+    82.5% 60%,
+    85% 62.5%,
+    87.5% 60%,
+    90% 62.5%,
+    92.5% 60%,
+    95% 62.5%,
+    97.5% 60%,
+    100% 62.5%,
+    90% 100%,
+    10% 100%
+  );
+}
+#highlight-day-24 .inner-ghost-2:after {
+  height: 20%;
+  aspect-ratio: 1/1;
+  width: auto;
+  top: 30%;
+  left: 55%;
+  translate: -50% -50%;
+  background: radial-gradient(25% 25% at 35% 35%, #ff4d4d, transparent),
+    radial-gradient(50% 50% at 40% 40%, var(--red-light), transparent),
+    var(--red-dark);
+  box-shadow:
+    inset 0 -0.25vh 0.5vh var(--black-50),
+    0 1vh 1vh -0.5vh var(--black-50);
+  border-radius: 15vh;
+  z-index: -1;
+}
+#highlight-day-24 .inner-ghost-2 .inner-part-a:before {
+  top: 30%;
+  left: 30%;
+}
+#highlight-day-24 .inner-ghost-2 .inner-part-a:after {
+  top: 30%;
+  left: 70%;
+  scale: -1 1;
+}
+#highlight-day-24 .inner-ghost-2 .inner-part-b {
+  width: 80%;
+  aspect-ratio: 1/0.38;
+  height: auto;
+  top: 81%;
+  left: 50%;
+  scale: 1 -1;
+  translate: -50% -50%;
+  background: radial-gradient(#1c0100 5%, transparent 40%),
+    radial-gradient(50% 300% at 50% 100%, #860c00 90%, transparent 91%);
+  filter: drop-shadow(0 0 0.5vh var(--black-50));
+}
+#highlight-day-24 .inner-ghost-2 .inner-part-b:before {
+  background: linear-gradient(
+    to bottom,
+    #ff5151 3%,
+    white 10%,
+    white 90%,
+    #ff5151 97%
+  );
+
+  --clip-path: polygon(
+    100% 100%,
+    0 100%,
+    0 92.5%,
+    2.5% 50%,
+    5% 92.5%,
+    7.5% 50%,
+    10% 92.5%,
+    12.5% 50%,
+    15% 92.5%,
+    17.5% 50%,
+    20% 92.5%,
+    22.5% 50%,
+    25% 92.5%,
+    27.5% 50%,
+    30% 92.5%,
+    32.5% 50%,
+    35% 92.5%,
+    37.5% 50%,
+    40% 92.5%,
+    42.5% 50%,
+    45% 92.5%,
+    47.5% 50%,
+    50% 92.5%,
+    52.5% 50%,
+    55% 92.5%,
+    57.5% 50%,
+    60% 92.5%,
+    62.5% 50%,
+    65% 92.5%,
+    67.5% 50%,
+    70% 92.5%,
+    72.5% 50%,
+    75% 92.5%,
+    77.5% 50%,
+    80% 92.5%,
+    82.5% 50%,
+    85% 92.5%,
+    87.5% 50%,
+    90% 92.5%,
+    92.5% 50%,
+    95% 92.5%,
+    97.5% 50%,
+    100% 92.5%,
+
+    100% 0,
+    0 0,
+
+    2.5% 7.5%,
+    5% 55%,
+    7.5% 7.5%,
+    10% 50%,
+    12.5% 7.5%,
+    15% 50%,
+    17.5% 7.5%,
+    20% 50%,
+    22.5% 7.5%,
+    25% 50%,
+    27.5% 7.5%,
+    30% 50%,
+    32.5% 7.5%,
+    35% 50%,
+    37.5% 7.5%,
+    40% 50%,
+    42.5% 7.5%,
+    45% 50%,
+    47.5% 7.5%,
+    50% 50%,
+    52.5% 7.5%,
+    55% 50%,
+    57.5% 7.5%,
+    60% 50%,
+    62.5% 7.5%,
+    65% 50%,
+    67.5% 7.5%,
+    70% 50%,
+    72.5% 7.5%,
+    75% 50%,
+    77.5% 7.5%,
+    80% 50%,
+    82.5% 7.5%,
+    85% 50%,
+    87.5% 7.5%,
+    90% 50%,
+    92.5% 7.5%,
+    95% 55%,
+    97.5% 7.5%,
+    100% 0
+  );
+  clip-path: var(--clip-path);
+  animation: cupcake-teeth 120ms infinite alternate ease-in-out;
+}
+@keyframes cupcake-teeth {
+  0% {
+    clip-path: var(--clip-path);
+  }
+  100% {
+    clip-path: polygon(
+      100% 100%,
+      0 100%,
+      0 92.5%,
+      2.5% 50%,
+      5% 92.5%,
+      7.5% 50%,
+      10% 92.5%,
+      12.5% 50%,
+      15% 92.5%,
+      17.5% 50%,
+      20% 92.5%,
+      22.5% 50%,
+      25% 92.5%,
+      27.5% 50%,
+      30% 92.5%,
+      32.5% 50%,
+      35% 92.5%,
+      37.5% 50%,
+      40% 92.5%,
+      42.5% 50%,
+      45% 92.5%,
+      47.5% 50%,
+      50% 92.5%,
+      52.5% 50%,
+      55% 92.5%,
+      57.5% 50%,
+      60% 92.5%,
+      62.5% 50%,
+      65% 92.5%,
+      67.5% 50%,
+      70% 92.5%,
+      72.5% 50%,
+      75% 92.5%,
+      77.5% 50%,
+      80% 92.5%,
+      82.5% 50%,
+      85% 92.5%,
+      87.5% 50%,
+      90% 92.5%,
+      92.5% 50%,
+      95% 92.5%,
+      97.5% 50%,
+      100% 92.5%,
+
+      100% 0,
+      0 0,
+
+      2.5% 17.5%,
+      5% 70%,
+      7.5% 17.5%,
+      10% 65%,
+      12.5% 17.5%,
+      15% 65%,
+      17.5% 17.5%,
+      20% 65%,
+      22.5% 17.5%,
+      25% 65%,
+      27.5% 17.5%,
+      30% 65%,
+      32.5% 17.5%,
+      35% 65%,
+      37.5% 17.5%,
+      40% 65%,
+      42.5% 17.5%,
+      45% 65%,
+      47.5% 17.5%,
+      50% 65%,
+      52.5% 17.5%,
+      55% 65%,
+      57.5% 17.5%,
+      60% 65%,
+      62.5% 17.5%,
+      65% 65%,
+      67.5% 17.5%,
+      70% 65%,
+      72.5% 17.5%,
+      75% 65%,
+      77.5% 17.5%,
+      80% 65%,
+      82.5% 17.5%,
+      85% 65%,
+      87.5% 17.5%,
+      90% 65%,
+      92.5% 17.5%,
+      95% 70%,
+      97.5% 17.5%,
+      100% 0
+    );
+  }
+}
+
+/*candy cane*/
+#highlight-day-24 .inner-ghost-3 {
+  width: min(30vw, 30vh);
+  aspect-ratio: 1/2.5;
+  height: auto;
+}
+#highlight-day-24 .inner-ghost-3:before {
+  border-radius: 50% 50% 0 0/ 20% 20% 0 0;
+  background: radial-gradient(
+      50% 20% at 50% 20%,
+      transparent 60%,
+      var(--black-50) 60%,
+      transparent 75%
+    ),
+    linear-gradient(to right, transparent 88%, var(--black-50));
+  clip-path: polygon(
+    0 0,
+    0 25%,
+    20% 25%,
+    20% 20%,
+    80% 20%,
+    56% 0,
+    88% 0,
+    88% 100%,
+    100% 100%,
+    100% 0
+  );
+}
+#highlight-day-24 .inner-ghost-3:after {
+  background: repeating-linear-gradient(
+    70deg,
+    white,
+    var(--red-light) 0.5%,
+    var(--red-light) 10%,
+    white 10.5%,
+    white 17%
+  );
+  border-radius: 50% 50% 0 0/ 20% 20% 0 0;
+  clip-path: polygon(
+    0 25%,
+    20% 25%,
+    20% 19%,
+    22% 15.25%,
+    27% 12%,
+    32% 10%,
+    38% 8.5%,
+    44% 7.7%,
+    50% 7.5%,
+    50% 7.5%,
+    56% 7.7%,
+    62% 8.5%,
+    68% 10%,
+    73% 12%,
+    78% 15.25%,
+    80% 19%,
+    80% 100%,
+    100% 100%,
+    100% 0,
+    0 0
+  );
+  z-index: -1;
+}
+#highlight-day-24 .inner-ghost-3 .inner-part-a:before {
+  top: 25%;
+  left: 75%;
+}
+#highlight-day-24 .inner-ghost-3 .inner-part-a:after {
+  top: 25%;
+  left: 105%;
+  scale: -1 1;
+}
+#highlight-day-24 .inner-ghost-3 .inner-part-b {
+  width: 50%;
+  aspect-ratio: 1/0.7;
+  height: auto;
+  top: 54%;
+  left: 90%;
+  translate: -50% -50%;
+  background: radial-gradient(#1c0100 5%, transparent 40%),
+    radial-gradient(50% 300% at 50% -10%, #860c00 80%, transparent 81%);
+  filter: drop-shadow(0 0 0.5vh var(--black-50));
+}
+#highlight-day-24 .inner-ghost-3 .inner-part-b:before {
+  background: linear-gradient(
+    to bottom,
+    #ff5151 3%,
+    white 10%,
+    white 90%,
+    #ff5151 97%
+  );
+  --clip-path: polygon(
+    0 0,
+    100% 0,
+    90% 60%,
+    80% 10%,
+    70% 50%,
+    60% 10%,
+    50% 50%,
+    40% 10%,
+    30% 50%,
+    20% 10%,
+    10% 60%,
+    0 0,
+    0 100%,
+    10% 100%,
+    20% 40%,
+    30% 90%,
+    40% 50%,
+    50% 90%,
+    60% 50%,
+    70% 90%,
+    80% 40%,
+    90% 100%,
+    0 100%
+  );
+  clip-path: var(--clip-path);
+  border: 0.5vh solid #860c00;
+  border-radius: 10%;
+  border-left: none;
+  border-right: none;
+  animation: candy-cane-teeth 90ms infinite alternate ease-in-out;
+}
+@keyframes candy-cane-teeth {
+  0% {
+    clip-path: var(--clip-path);
+  }
+  100% {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      90% 70%,
+      80% 20%,
+      70% 60%,
+      60% 20%,
+      50% 60%,
+      40% 20%,
+      30% 60%,
+      20% 20%,
+      10% 70%,
+      0 0,
+      0 100%,
+      10% 100%,
+      20% 30%,
+      30% 80%,
+      40% 40%,
+      50% 80%,
+      60% 40%,
+      70% 80%,
+      80% 30%,
+      90% 100%,
+      0 100%
+    );
+  }
+}
+
+/*positions*/
+#highlight-day-24 .inner-ghost-1,
+#highlight-day-24 .inner-ghost-2,
+#highlight-day-24 .inner-ghost-3 {
+  z-index: 1;
+  translate: -50% -50%;
+  top: 50%;
+  left: 50%;
+}
+#highlight-day-24 .inner-ghost-2 {
+  translate: -50% -100%;
+}
+#highlight-day-24 .inner-ghost-3 {
+  translate: -90% -50%;
+}
+
+/*Animations PT-1*/
+#highlight-day-24:before,
+#highlight-day-24 .ghost-0,
+#highlight-day-24 img {
+  animation:
+    phase-swap var(--animation-duration) ease-in forwards,
+    world-shake var(--animation-duration) ease-in forwards;
+}
+@keyframes phase-swap {
+  0%,
+  10% {
+    transform: translateY(0);
+  }
+  30%,
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes world-shake {
+  5%,
+  30% {
+    translate: 0 0;
+  }
+  5.25%,
+  5.75%,
+  6.25%,
+  6.75%,
+  7.25%,
+  7.75%,
+  8.25%,
+  8.75%,
+  9.25%,
+  9.75%,
+  10.25%,
+  10.75%,
+  11.25%,
+  11.75%,
+  12.25%,
+  12.75%,
+  13.25%,
+  13.75%,
+  14.25%,
+  14.75%,
+  15.25%,
+  15.75%,
+  16.25%,
+  16.75%,
+  17.25%,
+  17.75%,
+  18.25%,
+  18.75%,
+  19.25%,
+  19.75%,
+  20.25%,
+  20.75%,
+  21.25%,
+  21.75%,
+  22.25%,
+  22.75%,
+  23.25%,
+  23.75%,
+  24.25%,
+  24.75%,
+  25.25%,
+  25.75%,
+  26.25%,
+  26.75%,
+  27.25%,
+  27.75%,
+  28.25%,
+  28.75%,
+  29.25%,
+  29.75% {
+    translate: -0.5% 0;
+  }
+  5.5%,
+  6%,
+  6.5%,
+  7%,
+  7.5%,
+  8%,
+  8.5%,
+  9%,
+  9.5%,
+  10%,
+  10.5%,
+  11%,
+  11.5%,
+  12%,
+  12.5%,
+  13%,
+  13.5%,
+  14%,
+  14.5%,
+  15%,
+  15.5%,
+  16%,
+  16.5%,
+  17%,
+  17.5%,
+  18%,
+  18.5%,
+  19%,
+  19.5%,
+  20%,
+  20.5%,
+  21%,
+  21.5%,
+  22%,
+  22.5%,
+  23%,
+  23.5%,
+  24%,
+  24.5%,
+  25%,
+  25.5%,
+  26%,
+  26.5%,
+  27%,
+  27.5%,
+  28%,
+  28.5%,
+  29%,
+  29.5% {
+    translate: 0.5% 0;
+  }
+}
+
+/*Animations PT-2*/
+#highlight-day-24 .img-wrapper {
+  perspective: var(--perspective);
+}
+#highlight-day-24 .ghost-0 .part-a {
+  top: 100%;
+  height: 100vh;
+}
+@keyframes phase-2-pop-in {
+  0%,
+  30% {
+    scale: 0;
+  }
+  31% {
+    scale: 1.1;
+  }
+  32%,
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes anger {
+  0% {
+    transform: translateX(-1%);
+  }
+  100% {
+    transform: translateX(1%);
+  }
+}
+/*cupcake anim*/
+#highlight-day-24 .inner-ghost-2 {
+  top: 55.5%;
+  left: 35%;
+  scale: 0;
+  animation:
+    anger calc(var(--animation-duration) * 0.001) var(--cupcake-delay) infinite
+      linear alternate,
+    cupcake var(--animation-duration) var(--cupcake-delay) infinite ease-out,
+    phase-2-pop-in var(--animation-duration) var(--cupcake-delay) forwards;
+}
+@keyframes cupcake {
+  0%,
+  35%,
+  37.5%,
+  45%,
+  50%,
+  52.5%,
+  60%,
+  65%,
+  67.5%,
+  75%,
+  80%,
+  82.5% {
+    transform: translateY(0);
+  }
+  37%,
+  52%,
+  67%,
+  82% {
+    transform: translateY(-15cqh);
+    animation-timing-function: ease-in;
+  }
+  38%,
+  53%,
+  68%,
+  83% {
+    transform: translateY(5cqh);
+    animation-timing-function: ease-in;
+  }
+}
+/*card-2*/
+#highlight-day-24 .inner-ghost-0:after {
+  animation:
+    cupquake var(--animation-duration) var(--cupcake-delay) infinite ease-out,
+    phase-2-pop-in var(--animation-duration) forwards;
+}
+@keyframes cupquake {
+  0%,
+  35%,
+  37.5%,
+  45%,
+  52.5%,
+  60%,
+  67.5%,
+  75%,
+  82.5% {
+    transform: translateY(0);
+  }
+  38%,
+  53%,
+  68%,
+  83% {
+    transform: translateY(5cqh);
+    animation-timing-function: ease-in;
+  }
+}
+/*candycane anim*/
+#highlight-day-24 .inner-ghost-3 {
+  top: 73%;
+  left: 90%;
+  transform-origin: 90% 50%;
+  scale: 0;
+  --anim-delay: 0.8s;
+  animation:
+    anger calc(var(--animation-duration) * 0.001) var(--anim-delay) infinite
+      linear alternate,
+    candycane var(--animation-duration) var(--anim-delay) infinite;
+}
+@keyframes candycane {
+  0%,
+  30% {
+    scale: 0;
+  }
+  31% {
+    scale: 1.1;
+  }
+  32%,
+  40% {
+    scale: 1;
+    rotate: z 30deg;
+  }
+  94% {
+    scale: 5;
+    rotate: z 3deg;
+  }
+  95%,
+  100% {
+    scale: 0;
+    rotate: z 30deg;
+  }
+}
+
+#highlight-day-24 .inner-ghost-1 {
+  visibility: hidden;
+  --anim-delay: 0.8s;
+  transform: translate(-30vw, 150vh);
+  animation:
+    donut var(--animation-duration) var(--anim-delay) forwards,
+    phase-2-pop-in var(--animation-duration) var(--anim-delay) forwards;
+  z-index: 90;
+}
+@keyframes donut {
+  0% {
+    visibility: hidden;
+    transform: translate(-30vw, 150vh) translateZ(calc(var(--perspective) * -1));
+  }
+  31% {
+    visibility: hidden;
+  }
+  32% {
+    visibility: visible;
+  }
+  50% {
+    transform: translate(-30vw, 50vh) translateZ(0);
+  }
+  100% {
+    visibility: visible;
+    transform: translate(0vw, 0vh) translateZ(calc(var(--perspective) * 0.99));
+  }
+  90% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(0);
+  }
+}
+
+/*Animations PT-3*/
+#highlight-day-24 ~ #snow {
+  animation: snow-finale 3s 19.5s forwards;
+}
+@keyframes snow-finale {
+  0% {
+    z-index: -1;
+  }
+  1% {
+    z-index: 95;
+  }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    z-index: 99;
+  }
+}
+#highlight-day-24 .ghost-1 {
+  z-index: 91;
+  opacity: 0;
+  background: radial-gradient(var(--red), var(--red-dark));
+  animation: finale-blend 1s 21s forwards ease-out;
+}
+@keyframes finale-blend {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#highlight-day-24 [class^='ghost-']:not(.ghost-0, .ghost-1) {
+  font-size: 15vh;
+  font-weight: bold;
+  text-shadow: var(--text-shadow-default);
+  z-index: 92;
+}
+/* prettier-ignore */
+#highlight-day-24 [class^='ghost-']:not(.ghost-0, .ghost-1):before,
+#highlight-day-24 [class^='ghost-']:not(.ghost-0, .ghost-1):after,
+#highlight-day-24 [class^='ghost-']:not(.ghost-0, .ghost-1) [class^='part-']:before,
+#highlight-day-24 [class^='ghost-']:not(.ghost-0, .ghost-1) [class^='part-']:after {
+  height: auto;
+  width: auto;
+  top: 45%;
+  left: 50%;
+  --row-1-y: -50%;
+  --row-2-y: 50%;
+  --letter-count: 0;
+  --letter-delay: calc(90ms * var(--letter-count));
+  --letter-in-from-y: -100vh;
+  translate: -50% var(--letter-in-from-y);
+  animation:
+    letter-in 2s calc(20s + var(--letter-delay)) forwards ease-in-out,
+    letter-hop 1.5s calc(23s + var(--letter-delay)) infinite alternate ease-in;
+}
+@keyframes letter-in {
+  0% {
+    translate: -50% var(--letter-in-from-y);
+  }
+  100% {
+    translate: -50% -50%;
+  }
+}
+@keyframes letter-hop {
+  0%,
+  80% {
+    translate: -50% -50%;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    translate: -50% -65%;
+  }
+}
+/*happy*/
+#highlight-day-24 .ghost-2 .part-a:before {
+  content: 'H';
+  transform: translate(-200%, var(--row-1-y));
+}
+#highlight-day-24 .ghost-2 .part-a:after {
+  content: 'A';
+  transform: translate(-100%, var(--row-1-y));
+  --letter-count: 1 !important;
+}
+#highlight-day-24 .ghost-2 .part-b:before {
+  content: 'P';
+  transform: translate(-15%, var(--row-1-y));
+  --letter-count: 2 !important;
+}
+#highlight-day-24 .ghost-2 .part-b:after {
+  content: 'P';
+  transform: translate(85%, var(--row-1-y));
+  --letter-count: 3 !important;
+}
+#highlight-day-24 .ghost-2:before {
+  content: 'Y';
+  transform: translate(200%, var(--row-1-y));
+  --letter-count: 4 !important;
+}
+
+/*holidays*/
+#highlight-day-24 .ghost-2:after,
+#highlight-day-24 .ghost-3 [class^='part-']:before,
+#highlight-day-24 .ghost-3 [class^='part-']:after,
+#highlight-day-24 [class^='ghost-']:not(.ghost-0, .ghost-1, .ghost-2):before,
+#highlight-day-24 [class^='ghost-']:not(.ghost-0, .ghost-1, .ghost-2):after {
+  --letter-in-from-y: 100vh !important;
+}
+#highlight-day-24 .ghost-2:after {
+  content: 'H';
+  transform: translate(-315%, var(--row-2-y));
+  --letter-count: 5 !important;
+}
+#highlight-day-24 .ghost-3 .part-a:before {
+  content: 'O';
+  transform: translate(-203%, var(--row-2-y));
+  --letter-count: 6 !important;
+}
+#highlight-day-24 .ghost-3 .part-a:after {
+  content: 'L';
+  transform: translate(-200%, var(--row-2-y));
+  --letter-count: 7 !important;
+}
+#highlight-day-24 .ghost-3 .part-b:before {
+  content: 'I';
+  transform: translate(-100%, var(--row-2-y));
+  --letter-count: 8 !important;
+}
+#highlight-day-24 .ghost-3 .part-b:after {
+  content: 'D';
+  transform: translate(0, var(--row-2-y));
+  --letter-count: 9 !important;
+}
+#highlight-day-24 .ghost-3:before {
+  content: 'A';
+  transform: translate(80%, var(--row-2-y));
+  --letter-count: 10 !important;
+}
+#highlight-day-24 .ghost-3:after {
+  content: 'Y';
+  transform: translate(210%, var(--row-2-y));
+  --letter-count: 11 !important;
+}
+#highlight-day-24 .ghost-4:before {
+  content: 'S';
+  transform: translate(250%, var(--row-2-y));
+  --letter-count: 12 !important;
+}
+#highlight-day-24 .ghost-4:after {
+  content: '!';
+  transform: translate(380%, var(--row-2-y));
+  --letter-count: 13 !important;
+}
+
+.thank-you {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  font-family: system-ui;
+  font-size: 1.7vh;
+  opacity: 0;
+  color: var(--white);
+  animation: finale-blend 1s 22.5s forwards ease-out;
+}
+
+.thank-you a {
+  cursor: pointer;
+  position: relative;
+}
